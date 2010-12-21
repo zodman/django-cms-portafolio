@@ -29,3 +29,7 @@ bin
 /dist
 *.rst~
 /docs/*.html
+PYSMELLTAGS
+tags
+*.db
+local_settings.py
