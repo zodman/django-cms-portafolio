@@ -14,7 +14,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'interaliaweb',                      # Or path to database file if using sqlite3.
+        'NAME': 'interalia',                      # Or path to database file if using sqlite3.
         'USER': 'desarrolloweb',                      # Not used with sqlite3.
         'PASSWORD': '123456',                  # Not used with sqlite3.
         'HOST': '10.0.0.2',                      # Set to empty string for localhost. Not used with sqlite3.
