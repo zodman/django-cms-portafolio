@@ -1,0 +1,362 @@
+{% load i18n cms_tags menu_tags%}<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Interalia</title>
+
+
+<!-- estilos sitio -->
+<link rel="stylesheet" type="text/css" href="{{MEDIA_URL}}css/flexible.css" media="all" />
+     <!--320  mobile-->
+	 <link rel="alternate stylesheet" type="text/css" href="{{MEDIA_URL}}css/320.css" title="320"/>
+    
+  
+<!-- ajuste  columnas -->
+<script type="text/javascript" src="{{MEDIA_URL}}js/event_listeners.js"></script>
+<script type="text/javascript" src="{{MEDIA_URL}}js/resolution.js"></script> 
+    
+    
+<!--modernizr -->
+<script type="text/javascript" src="{{MEDIA_URL}}js/modernizr-1.6.min.js"></script>
+    
+    
+<link rel="SHORTCUT ICON" href="{{MEDIA_URL}}img/favicon.ico"/>
+    
+    <meta name="keywords" content="Interalia">
+
+	<meta name="description" content="Interalia">
+
+	<meta name="robots" content="index,follow">
+	<meta name="ROBOTS" content="all">
+	<meta name="Googlebot" content="all">
+	<meta name="Author" content=" Desarrollado por Interalia Digital">
+
+<!-- over bubbles -->
+
+<link href="{{MEDIA_URL}}css/jquery.bubblepopup.v2.3.1.css" rel="stylesheet" type="text/css" />
+<!--
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script>
+<script src="{{MEDIA_URL}}js/jquery.bubblepopup.v2.3.1.min.js" type="text/javascript"></script>
+-->
+
+<script type="text/javascript">
+<!--
+$(document).ready(function(){
+		/*		
+		$('.button').CreateBubblePopup({
+									   selectable: false,
+									   alwaysVisible: true,
+										position: 'top',
+										align: 'left',
+										width: '680px',
+										height: '255px',
+										tail:{align:'left',hidden: true},
+										innerHtml: '<img src="{{MEDIA_URL}}img/loading.gif" style="border:0px; vertical-align:middle; margin-right:10px; display:inline;" />cargando',
+										innerHtmlStyle: { color:'#FFFFFF', 'text-align':'center' },
+										themeName: 'azure',
+										themePath: '{{MEDIA_URL}}img/jquerybubblepopup-theme'
+								  	  });
+		
+		//save new settings for the selectable bubble popup...
+		$('#1, #2,#3,#4,#5,#6,#7,#8,').SetBubblePopupOptions({
+																	selectable: true,
+																	alwaysVisible: true,
+																	position : 'top',
+																	align	 : 'left',
+																	width: '680px',
+																	height: '255px',
+																	tail:{align:'left',hidden: true},
+																	innerHtml: ' <img src="{{MEDIA_URL}}img/loading.gif" style="border:0px; vertical-align:middle; margin-right:10px; display:inline;" />cargando',
+																	innerHtmlStyle: { color:'#FFFFFF', 'text-align':'center' },
+																	themeName: 	'azure',
+																	themePath: 	'{{MEDIA_URL}}img/jquerybubblepopup-theme'
+																 
+																	});
+
+	// :D el mouse over con el archivo a llamar
+		
+		// add a mouseover event for the "button" element...
+	$('.button').mouseover(function(){
+					
+			var button_id = this.id;
+			//alert(button_id);
+			var button = $(this);
+				
+				$.get('http://stg.interalia.net/interalia2011/over'+button_id+'.html',
+					
+
+					  function(data) {
+							button.SetBubblePopupInnerHtml('<iframe src="http://stg.interalia.net/interalia2011/over'+button_id+'.html" marginwidth="0" marginheight="0"  vspace="0" hspace="0"  style="width:99%; background-color:#FFF" allowtransparency="true"  scrolling="no"  height="250" frameborder="0">...</iframe>', false);
+									}); //end function
+		}); //end mouseover event
+*/
+});
+
+//-->
+
+
+</script>
+
+
+	{% plugins_media %}
+
+</head>
+<body>
+
+<!--<center> -->
+<div  id=INICIO>
+
+<!--header -->
+<header id="headerContainer">
+  <div class="leftCol">
+
+      <div id="logoInteralia"><a href="index.html"  title="Interalia :: Soluciones interactivas"></a></div>
+      <!--logoInteralia -->
+      <div id="navContainer">
+        <div id="mainav">
+			<nav>
+				{% spaceless %}
+				<ul> 
+					 {% show_menu 0 0 100 100 %}
+				</ul>
+				{% endspaceless %}
+          </nav>
+
+        </div>
+        <!--mainav -->
+      </div>
+      <!--navContainer -->
+  </div>
+  <!--leftCol -->
+  <div class="rightColHeader">
+    <div  class="rightContent">
+    
+      <div id="menuExtras">
+      <!-- 
+	  <script src="http://connect.facebook.net/es_LA/all.js#xfbml=1"></script><fb:like href="facebook.com/interalia.net" show_faces="false" id="megusta" width="120" layout="button_count"></fb:like> 
+	  -->
+
+      </div>
+      <!--menuExtras -->
+    </div>
+    <!--rightContent -->
+  </div>
+  <!--ightCol -->
+</header>
+<!--headerContainer -->
+
+
+<!--contenido -->
+
+<div id="contentContainer">
+	{% block content %}
+<div class="leftCol">
+	<section id="flash">
+		<div id="flashContainer"></div>
+		<!--flashcontainer  -->
+	</section>
+	   
+<section id="moduloCasos"> 
+    <div id="moduloContainer">
+    
+   <article id="1m">
+      <div class="modulo">
+        <div class="moduloContent">
+          <a href="casos.html?p=1.1.1.1"><div class="button" id="1"></div></a>
+          <!--button bubble --> 
+          <div class="moduloFoto"> <a href="casos.html?p=1.1.1.1"><img src="proyectos/teleton/small01.jpg" width="180" height="97" border="0" title="Proyecto" /></a> </div>
+          <!--moduloFoto -->
+          <div id="moduloTexto"> <h2>Nombre del servicio</h2>
+            <h1><a href="casos.html?p=1.1.1.1">Nombre del proyecto</a></h1>
+            <h3>País</h3>
+            <p class="liga"><a href="casos.html?p=1.1.1.1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur dignissim, lectus sit amet congue molestie, sapien lectus mollis leo, sit amet egestas ipsum nisi id mauris. Praesent fermentum lorem id.</a></p>
+          </div>
+          <!--moduloTexto -->
+        </div>
+        <!--moduloContent -->
+      </div>
+      </article> 
+      <!--fin modulo1 -->
+      
+       <article id="2m">
+      <div class="modulo">
+        <div class="moduloContent">
+          <a href="casos.html?p=1.1.1.2"><div class="button" id="2"></div></a>
+          <!--button bubble -->
+          <div class="moduloFoto"> <a href="casos.html?p=1.1.1.2"><img src="proyectos/teleton/small01.jpg" width="180" height="97" border="0" title="Proyecto" /></a> </div>
+          <!--moduloFoto -->
+          <div id="moduloTexto"> <h2>Nombre del servicio</h2>
+            <h1><a href="casos.html?p=1.1.1.2">Nombre del proyecto</a></h1>
+            <h3>País</h3>
+            <p class="liga"><a href="casos.html?p=1.1.1.2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur dignissim, lectus sit amet congue molestie, sapien lectus mollis leo, sit amet egestas ipsum nisi id mauris. Praesent fermentum lorem id.</a></p>
+          </div>
+          <!--moduloTexto -->
+        </div>
+        <!--moduloContent -->
+      </div>
+      </article>
+      <!-- fin modulo2 -->
+      
+       <article id="3m">
+      <div class="modulo">
+        <div class="moduloContent">
+          <a href="casos.html?p=1.1.1.1"><div class="button" id="3"></div></a>
+          <!--button bubble -->
+          <div class="moduloFoto"> <a href="casos.html?p=1.1.1.1"><img src="proyectos/teleton/small01.jpg" width="180" height="97" border="0" title="Proyecto" /></a> </div>
+          <!--moduloFoto -->
+          <div id="moduloTexto"> <h2>Nombre del servicio</h2>
+            <h1><a href="casos.html?p=1.1.1.1">Nombre del proyecto</a></h1>
+            <h3>País</h3>
+            <p class="liga"><a href="casos.html?p=1.1.1.1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur dignissim, lectus sit amet congue molestie, sapien lectus mollis leo, sit amet egestas ipsum nisi id mauris. Praesent fermentum lorem id.</a></p>
+          </div>
+          <!--moduloTexto -->
+        </div>
+        <!--moduloContent -->
+      </div>
+      </article>
+      <!--fin modulo3 -->
+      
+       <article id="4m">
+      <div class="modulo">
+        <div class="moduloContent">
+          <a href="casos.html?p=1.1.1.1"><div class="button" id="4"></div></a>
+          <!--button bubble -->
+          <div class="moduloFoto"> <a href="casos.html?p=1.1.1.1"><img src="proyectos/teleton/small01.jpg" width="180" height="97" border="0" title="Proyecto" /></a> </div>
+          <!--moduloFoto -->
+          <div id="moduloTexto"> <h2>Nombre del servicio</h2>
+            <h1><a href="casos.html?p=1.1.1.1">Nombre del proyecto</a></h1>
+            <h3>País</h3>
+            <p class="liga"><a href="casos.html?p=1.1.1.1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur dignissim, lectus sit amet congue molestie, sapien lectus mollis leo, sit amet egestas ipsum nisi id mauris. Praesent fermentum lorem id.</a></p>
+          </div>
+          <!--moduloTexto -->
+        </div>
+        <!--moduloContent -->
+      </div>
+      </article>
+      <!-- fin modulo4 -->
+      
+      <article id="5m">
+      <div class="modulo">
+        <div class="moduloContent">
+          <a href="casos.html?p=1.1.1.1"><div class="button" id="5"></div></a>
+          <!--button bubble -->
+          <div class="moduloFoto"> <a href="casos.html?p=1.1.1.1"><img src="proyectos/teleton/small01.jpg" width="180" height="97" border="0" title="Proyecto" /></a> </div>
+          <!--moduloFoto -->
+          <div id="moduloTexto"> <h2>Nombre del servicio</h2>
+            <h1><a href="casos.html?p=1.1.1.1">Nombre del proyecto</a></h1>
+            <h3>País</h3>
+            <p class="liga"><a href="casos.html?p=1.1.1.1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur dignissim, lectus sit amet congue molestie, sapien lectus mollis leo, sit amet egestas ipsum nisi id mauris. Praesent fermentum lorem id.</a></p>
+          </div>
+          <!--moduloTexto -->
+        </div>
+        <!--moduloContent -->
+      </div>
+      </article>
+      <!--fin modulo5 -->
+      
+    <article id="6m">
+      <div class="modulo">
+        <div class="moduloContent">
+          <a href="casos.html?p=1.1.1.1"><div class="button" id="6"></div></a>
+          <!--button bubble -->
+          <div class="moduloFoto"> <a href="casos.html?p=1.1.1.1"><img src="proyectos/teleton/small01.jpg" width="180" height="97" border="0" title="Proyecto" /></a> </div>
+          <!--moduloFoto -->
+          <div id="moduloTexto"> <h2>Nombre del servicio</h2>
+            <h1><a href="casos.html?p=1.1.1.1">Nombre del proyecto</a></h1>
+            <h3>País</h3>
+            <p class="liga"><a href="casos.html?p=1.1.1.1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur dignissim, lectus sit amet congue molestie, sapien lectus mollis leo, sit amet egestas ipsum nisi id mauris. Praesent fermentum lorem id.</a></p>
+          </div>
+          <!--moduloTexto -->
+        </div>
+        <!--moduloContent -->
+      </div>
+      </article>
+      <!--fin modulo6 -->
+      
+     <article id="7m">
+      <div class="modulo" id="siete">
+        <div class="moduloContent">
+          <a href="casos.html?p=1.1.1.1"><div class="button" id="7"></div></a>
+          <!--button bubble -->
+          <div class="moduloFoto"> <a href="casos.html?p=1.1.1.1"><img src="proyectos/teleton/small01.jpg" width="180" height="97" border="0" title="Proyecto" /></a> </div>
+          <!--moduloFoto -->
+          <div id="moduloTexto"> <h2>Nombre del servicio</h2>
+            <h1><a href="casos.html?p=1.1.1.1">Nombre del proyecto</a></h1>
+            <h3>País</h3>
+            <p class="liga"><a href="casos.html?p=1.1.1.1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur dignissim, lectus sit amet congue molestie, sapien lectus mollis leo, sit amet egestas ipsum nisi id mauris. Praesent fermentum lorem id.</a></p>
+          </div>
+          <!--moduloTexto -->
+        </div>
+        <!--moduloContent -->
+      </div>
+      </article>
+      <!--fin modulo7 -->
+      
+ 
+     <article id="8m">
+      <div class="modulo">
+        <div class="moduloContent">
+          <a href="casos.html?p=1.1.1.1"><div class="button" id="8"></div></a>
+          <!--button bubble -->
+          <div class="moduloFoto"> <a href="casos.html?p=1.1.1.1"><img src="proyectos/teleton/small01.jpg" width="180" height="97" border="0" title="Proyecto" /></a> </div>
+          <!--moduloFoto -->
+          <div id="moduloTexto"> <h2>Nombre del servicio</h2>
+            <h1><a href="casos.html?p=1.1.1.1">Nombre del proyecto</a></h1>
+            <h3>País</h3>
+            <p class="liga"><a href="casos.html?p=1.1.1.1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur dignissim, lectus sit amet congue molestie, sapien lectus mollis leo, sit amet egestas ipsum nisi id mauris. Praesent fermentum lorem id.</a></p>
+          </div>
+          <!--moduloTexto -->
+        </div>
+        <!--moduloContent -->
+      </div>
+      </article>
+      <!-- fin modulo8 -->
+    </div>
+    <!--moduloContainer -->
+  </section> 
+  </div>
+  <!--leftCol -->
+  
+  <aside id="columnaPracticas">
+  <div class="rightColContent">
+    <div  class="rightContent">
+      <h1>Mejores prácticas</h1>
+      <h2>Pensando en los usuarios</h2>
+      <p>Mejores prácticas Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin lacus libero, mollis vel condimentum in, mollis sit amet felis. Proin porta imperdiet nunc in convallis. Vestibulum augue mauris, ultrices et volutpat a, gravida at metus. Aliquam vitae mi lectus, vel malesuada ipsum. Morbi sit amet augue at eros dictum tempor sit amet ut erat. Sed ullamcorper tempor felis, quis lobortis lectus pretium quis. Etiam vehicula posuere vestibulum. Morbi rhoncus dolor sit amet lacus malesuada adipiscing. Praesent dapibus convallis felis, sed interdum risus volutpat nec. Morbi luctus, lectus a viverra elementum, ante erat gravida odio, eget ultricies eros nunc id lacus. Aliquam sed sem sapien. Ut eu massa odio, non mattis diam. Etiam eu urna et felis sodales cursus nec sit amet neque. Sed metus arcu, vestibulum non blandit non, dapibus id nisi. </p>
+      <h2>Mobile</h2>
+      <p>Morbi varius ornare odio, sit amet mollis enim dictum ut. Sed at metus vel ante accumsan porta. Ut mollis eros ut mi cursus placerat. Suspendisse justo nunc, posuere non rutrum eget, laoreet a nulla. Fusce fermentum egestas lectus vitae dictum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas at risus id nisi facilisis porttitor. Mauris tellus odio, cursus sit amet facilisis sit amet, porttitor et orci. Fusce tristique venenatis lorem, at sodales tellus porttitor in. Duis purus dolor, dignissim id tristique a, ultricies vel nibh. Donec in lectus arcu. Praesent odio massa, congue a adipiscing ac, vulputate sit amet mauris. Vestibulum rhoncus vehicula scelerisque. Etiam fermentum bibendum ultricies. Nam augue ligula, consequat eget ullamcorper ut, malesuada eu massa. Morbi at elit sed diam mattis mollis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus faucibus blandit pretium. Nulla facilisi. Suspendisse quis elit sem. </p>
+    </div>
+    <!--rightContent -->
+  </div>
+  <!--rightColContent -->
+  </aside>
+  {% endblock content %}
+</div> <!--contentContainer -->
+
+<!--footer -->
+<footer id="footerContainer">
+<div class="rowFooterTop">
+	<div class="leftColFooter">
+<!-- comment para loading mas rapido
+<script src="http://connect.facebook.net/es_LA/all.js#xfbml=1"></script><fb:like href="facebook.com/interalia.net" show_faces="false" id="megusta" width="550"></fb:like>
+-->
+ </div><!--leftColFooter -->
+  <div class="rightColFooter"><a href="#">Versión Mobile</a></div><!--rightColFooter -->
+</div><!--rowFooterTop -->
+<div class="rowFooterBottom">
+  <div class="leftColFooter">+52 (55) 5553-2010</div><!--leftColFooter -->
+  <div class="rightColFooter">1997-2011 Derechos Reservados</div><!--rightColFooter -->
+</div><!--rowFooterTop -->
+
+
+  </footer>
+
+<!--footerContainer -->
+
+
+
+<!--contentContainer -->
+</div>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!--        <li id="mainav1"><a href="index.html" title="Inicio">Inicio</a></li>
+            <li id="mainav2"><a href="casos.html?p=1.1.1.1" title="Casos">Casos</a></li>
+            <li id="mainav3"><a href="soluciones.html" title="Soluciones">Soluciones</a></li>
+            <li id="mainav4"><a href="contacto.html" title="Contacto">Contacto</a></li>
+			<li id="mainav5"><a href="talento.html" title="Tenemos y queremos a los mejores">Búsqueda de talento</a></li>
+-->
+{% load menu_tags %}
+{% for child in children %}
+<li id="mainav{{forloop.counter}}" class="{% if child.selected %}selected{% endif %}{% if child.ancestor %}ancestor{% endif %}{% if child.sibling %}sibling{% endif %}{% if child.descendant %}descendant{% endif %}">
+	<a href="{{ child.attr.redirect_url|default:child.get_absolute_url }}">{{ child.get_menu_title }}</a>
+	{% if child.children %}
+    <ul>
+        {% show_menu from_level to_level extra_inactive extra_active template "" "" child %}
+    </ul>
+    {% endif %}
+</li>
+{% endfor %}
+
+
