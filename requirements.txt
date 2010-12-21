@@ -1,5 +1,4 @@
 django
 south
 -e git+https://github.com/zodman/cmsplugin_facebook.git#egg=cmsplugin_facebook
-#-e git+git://github.com/divio/django-cms.git#egg=django-cms
--e svn+http://django-countries.googlecode.com/svn/trunk/#egg=django-countries
+-e hg+https://bitbucket.org/smileychris/django-countries#egg=django-countries

@@ -109,10 +109,9 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     #django apps
     'south',
-    'django_countries',
     #django-cms
     'cms',
-    'publisher',
+#    'publisher',
     'mptt',
     'menus',
     'cms.plugins.text',
@@ -141,7 +140,7 @@ CMS_TEMPLATES = (
         ('nav_playground.html', gettext('navigation examples')),
 )
 
-CMS_MEDIA_ROOT = os.path.join(BASE_PATH, '../django-cms/cms/media/cms/')
+CMS_MEDIA_ROOT = os.path.join(BASE_PATH, 'django_cms/cms/media/cms/')
 
 CMS_SITE_LANGUAGES = {
         1:['es'],
