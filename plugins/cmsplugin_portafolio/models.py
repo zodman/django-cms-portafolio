@@ -15,7 +15,7 @@ class Client(models.Model):
 
 class Proyect(models.Model):
     service = models.ForeignKey(Service, related_name="proyectos")
-#    country = CountryField()
+    country = CountryField()
     client = models.ForeignKey(Client, related_name ="proyectos")
     name = models.CharField(max_length= 100)
     description_short = models.TextField()
