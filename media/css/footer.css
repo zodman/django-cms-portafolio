@@ -1,0 +1,21 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+#footerContainer{ float:none; width:100%; height:auto; min-height:25px; margin-left: auto ; margin-right: auto; overflow:hidden ; margin-top:30px; 
+}
+
+.rowFooterTop{ float:left; width:95%; height:auto; min-height:25px; margin:10px 0px  10px 33px ; border-bottom:#09C 1px solid; clear:both; overflow:hidden;
+}
+
+.rowFooterBottom{ float:left; width:95%; height:auto; min-height:25px; margin:0px 0px  0px 33px ; clear:both; overflow:hidden; 
+}
+
+/* 2 columnas para sumar el 100% */
+.leftColFooter{ float:left; width:60%; height:auto; margin:0px 0px  0px 0px ; text-align:left; font-size:0.85em
+}
+
+.rightColFooter{ float:right; width:30%; height:auto;  margin:0px 0px 0px 0px ; text-align:right; font-size:0.85em
+}
+
+

@@ -1,0 +1,212 @@
+@charset "utf-8";
+/* CSS Document */
+
+@import url( header.css );
+@import url( modulos.css );
+@import url( over.css );
+@import url( footer.css );
+
+
+/* HTML5 tags */
+header, section, footer,
+aside, nav, article, figure {
+	display: block; list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	padding:0px;
+	margin:0px 0px 0px 0px;
+	font-size:0.8em;
+	font-family:Arial, Helvetica, sans-serif;
+	color:#333
+}
+
+h1 { font-size:1.4em; color:#000}
+h2 { font-size:1em; color:#09C; font-weight:bold}
+p {  font-size:1em; color:#333}
+
+.hr { width:95% height:2px; border-bottom:dotted #333 1px;}
+
+a{
+ color: #09C; text-decoration:none
+}
+
+a:link{
+ color: #09C; text-decoration:none;
+}
+
+a:hover{
+color: #F60;
+}
+
+
+
+#headerContainer{ float:none; width:100%; height:100px; margin-left: auto ; margin-right: auto; overflow:hidden;  
+}
+
+#contentContainer{ float:none; width:100%; height:auto; min-height:250px; margin-left: auto ; margin-right: auto ; overflow:hidden;
+}
+
+/* 2 columnas para sumar el 100% */
+.leftCol{ float:left; width:78.5%; height:auto; margin:0px 0px  0px 0px ; 
+}
+
+.rightCol{ float:right; width:21.5%; height:auto;  margin:0px 0px 0px 0px ; 
+}
+
+
+/* derecha espacial para header y contenido por fondo */
+.rightColHeader{ float:right; width:21.5%; height:100px;  margin:0px 0px  0px 0px; background:url(../img/practicas_textura.jpg) left top no-repeat;
+}
+
+.rightColContent{ float:right; width:21.5%; height:auto;  margin:0px 0px 0px  0px; background:url(../img/practicas_textura_content.jpg) left top no-repeat;
+}
+
+
+/* contenido interior izq y derecho para margenes, no se uso en content */
+
+.leftContent{ float:none; width:93%; height:auto; margin-left: auto ; margin-right: auto ; 
+}
+
+
+.rightContent{ float:none; width:85%; height:auto; margin-left: auto ; margin-right: auto ; 
+}
+
+/* flash, */
+#flashContainer{ float:none; width:100%; height:330px; background-color:#CCC;
+}
+
+
+
+
+/*CASOS*/
+
+/* 2 columnas para sumar el 100% en casos */
+
+
+.leftColCasos{ float:left; width:22%; height:auto; min-height:550px;  margin:0px 0px 0px 0px ; background:url(../img/practicas_textura_completo.jpg) left -10px no-repeat; overflow:visible; 
+}
+
+.rightColCasos{ float:right; width:75%; height:auto; min-height:300px; margin:0px 0px  0px 0px ;  
+}
+
+#menuCasosContainer{
+	float:left;
+	width:90%; 
+	height:auto; min-height:150px;
+	margin:0px 0px 0px 20px; 
+}
+
+
+.rightColCasosContainer{ float:left; width:96%; height:auto; min-height:230px; margin:0px 0px  0px 0px ; 
+}
+
+
+
+#carrouselCasosContainer{ float:none; width:100%; height:213px; margin:0px 0px 0px 0px ; padding: 17px 0px 0px 0px;
+}
+
+
+#textosContainer{ float:left; width:100%; height:auto; margin:33px 0px 0px 0px ;  padding:0px 10px 0px 0px ; 
+}
+
+
+
+#textosCasos{ float:left; width:60%; height:auto; margin:33px 0px 0px 0px ;  padding: 0px 0px 0px 25px;
+}
+
+
+/* bigger casos*/
+
+
+
+#textosCasos h1{ color:#000; font-size:1.5em; font-weight:bold; margin:2px 0px 2px 0px;
+}
+
+#textosCasos h1 a{ color:#000; font-size:1em; font-weight:bold; text-decoration:none;
+}
+
+#textosCasos h1 a:link{ color:#000; font-size:1em; font-weight:bold; text-decoration:none;
+}
+
+#textosCasos h1 a:active{ color: #F60; 
+}
+
+#textosCasos h1 a:visited{ color: #333; 
+}
+
+#textosCasos h1 a:hover{ color:#09C; 
+}
+
+
+#textosCasos h2{ font-size:0.9em; color:#666; margin:2px 0px 2px 0px; font-weight:normal; 
+}
+
+#textosCasos h3{ font-size:0.9em; color: #09C; margin:2px 0px 2px 0px; font-weight:normal
+}
+
+
+#socialesCasos{ float:right; width:20%; height:auto; min-height:250px; margin:33px 0px 0px 0px ; padding:0px 10px 0px 10px ; border-left:#999 1px dotted;
+}
+
+
+/*SOLUCIONES CONTACTO BUSQUEDA*/
+
+/* 2 columnas para sumar el 100% en casos */
+
+
+.leftColSol{ float:left; width:48%; height:auto; min-height:250px;  margin:0px 0px 0px 0px ; 
+}
+
+.rightColSol{ float:right; width:48%; height:auto; min-height:300px; margin:0px 0px  0px 0px ; 
+}
+
+#infoContainerLeft{
+	float:right;
+	width:93%; 
+	height:auto; min-height:250px;
+	margin:25px 0px 0px 0px;  margin-left: auto ; margin-right: auto; overflow:hidden;
+}
+
+#infoContainerRight{
+	float:left;
+	width:93%; 
+	height:auto; min-height:250px;
+	margin:25px 0px 0px 0px;  margin-left: auto ; margin-right: auto; overflow:hidden;
+}
+
+/* buttons de carrousel del home*/
+
+.button #1{ border:#F00
+}
+
+#2{ 
+}
+
+#3{ 
+}
+
+#4{ 
+}
+
+#5{ 
+}
+
+#6{ 
+}
+
+#7{ 
+}
+
+#8{ 
+}
+
+#9{ 
+}
+
+#10{ 
+}
+
+

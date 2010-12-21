@@ -13,11 +13,11 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': '',                      # Or path to database file if using sqlite3.
-        'USER': '',                      # Not used with sqlite3.
-        'PASSWORD': '',                  # Not used with sqlite3.
-        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
+        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'interaliaweb',                      # Or path to database file if using sqlite3.
+        'USER': 'desarrolloweb',                      # Not used with sqlite3.
+        'PASSWORD': '123456',                  # Not used with sqlite3.
+        'HOST': '10.0.0.2',                      # Set to empty string for localhost. Not used with sqlite3.
         'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
     }
 }
@@ -33,7 +33,7 @@ TIME_ZONE = 'America/Mexico'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'en-Mx'
+LANGUAGE_CODE = 'es'
 
 SITE_ID = 1
 
@@ -75,7 +75,21 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    "cms.middleware.media.PlaceholderMediaMiddleware",
+    "cms.middleware.page.CurrentPageMiddleware",
 )
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    "django.contrib.auth.context_processors.auth",
+    "django.core.context_processors.debug",
+    "django.core.context_processors.i18n",
+    "django.core.context_processors.media",
+    "django.contrib.messages.context_processors.messages",
+    "django.core.context_processors.request",
+    "cms.context_processors.media",
+)
+
+
 
 ROOT_URLCONF = 'interalia.urls'
 
@@ -92,8 +106,47 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.sites',
     'django.contrib.messages',
-     'django.contrib.admin',
+    'django.contrib.admin',
+    #django apps
+    'south',
+    'django_countries',
+    #django-cms
+    'cms',
+    'publisher',
+    'mptt',
+    'menus',
+    'cms.plugins.text',
+    'cms.plugins.picture',
+    'cms.plugins.file',
+    'cms.plugins.flash',
+    'cms.plugins.link',
+    'cms.plugins.snippet',
+    'cms.plugins.googlemap',
+    'cms.plugins.teaser',
+    'cms.plugins.video',
+    'cms.plugins.twitter',
+    'cms.plugins.inherit',
+    # custom cmsplugins
+    "cmsplugin_facebook",
+    "plugins.cmsplugin_portafolio"
+
 )
+# django-cms settings
+gettext = lambda s: s
+
+CMS_TEMPLATES = (
+        ('pagina_inicio.html', gettext('Pagina Inicio')),
+        ('col_two.html', gettext('two columns')),
+        ('col_three.html', gettext('three columns')),
+        ('nav_playground.html', gettext('navigation examples')),
+)
+
+CMS_MEDIA_ROOT = os.path.join(BASE_PATH, '../django-cms/cms/media/cms/')
+
+CMS_SITE_LANGUAGES = {
+        1:['es'],
+}
+CMS_MODERATOR = False 
 
 
 try:

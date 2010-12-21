@@ -1,0 +1,52 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+
+
+/* dopdown menu ver mas*/
+#slidebottom {
+  position: fixed;
+}
+
+.slide {
+  position:relative; text-align:left
+}
+
+.slide ul, li{margin:0; padding:0; list-style:none; }
+
+.slide .inner {
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+}
+
+
+.jcarousel-item {
+    float: left;
+    list-style: none;
+    /* We set the width/height explicitly. No width/height causes infinite loops. */
+    width: 180px;
+    height: 97px; 
+}
+
+
+.jcarousel-itemCasos {
+    float: left;
+    list-style: none;
+    /* We set the width/height explicitly. No width/height causes infinite loops. */
+    width: 360px;
+    height: 194px; 
+}
+
+
+
+/*accordion menu*/
+
+
+ul#menu li a {display:inline-block;}
+ul#menu li a {display:block;}
+
+
+
+

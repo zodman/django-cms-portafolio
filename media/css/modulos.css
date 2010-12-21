@@ -1,0 +1,77 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+
+
+
+/* envolvente casos */
+#moduloContainer{ float:none; width:100%; height:auto; min-height:250px; margin:20px 0px 0px 0px; overflow:hidden
+}
+
+.modulo{ float:left; width:244px; height:auto; min-height:250px; margin:0px 0px 33px 0px; border-right:#999 dotted 1px; background-color: #FFF; display:block
+}
+
+.moduloContent{ float:none; width:180px; height:auto; min-height:150px; margin-left: auto ; margin-right: auto; 
+}
+
+.moduloFoto{ float:none; width:180px; height:97px; margin-left: auto ; margin-right: auto; margin-bottom:10px; border-bottom: 2px  solid #09C;
+}
+
+#moduloTexto{ float:none; width:180px; height:auto; min-height:150px; margin-left: auto ; margin-right: auto; overflow:hidden; 
+}
+
+
+#moduloTexto h2{ font-size:0.9em; color:#666; margin:2px 0px 2px 0px; font-weight:normal; 
+}
+
+#moduloTexto h1{ color:#000; font-size:1em; font-weight:bold; margin:2px 0px 2px 0px;
+}
+
+#moduloTexto h1 a{ color:#000; font-size:1.2em; font-weight:bold; text-decoration:none;
+}
+
+#moduloTexto h1 a:link{ color:#000; font-size:1.2em; font-weight:bold; text-decoration:none;
+}
+
+#moduloTexto h1 a:active{ color: #F60; 
+}
+
+#moduloTexto h1 a:visited{ color: #000; 
+}
+
+#moduloTexto h1 a:hover{ color:#09C; 
+}
+
+
+#moduloTexto h3{ font-size:0.9em; color: #09C; margin:2px 0px 2px 0px; font-weight:normal
+}
+
+
+
+.liga a { text-decoration:none; color: #333;
+}
+
+.liga a:link { text-decoration:none; color: #333;
+}
+
+.liga a:hover { color:#09C
+}
+
+
+.resumenCasos{ color: #666; font-size:1em; 
+}
+
+/*.cuerpoCasos{ color:#333; font-size:1em; 
+}*/
+
+.enfasis{ color: #666; font-size:1.5em;
+}
+
+
+.enfasisAzul{ color: #09C; font-size:1.5em;
+}
+
+.servicioSoluciones{ color: #09C; font-size:1em; font-weight:bold;
+}
+

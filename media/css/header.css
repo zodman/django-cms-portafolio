@@ -1,0 +1,70 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+/* todo va dentro de containerHeader en flexible.css*/
+/* logo Interalia*/
+
+#logoInteralia{
+width:213px; float:left; height:75px; background-image:url(../img/logo_interalia.jpg); margin:20px 0px 0px 20px;
+display:block; overflow:hidden;
+} 
+
+#logoInteralia a{
+width:213px; float:left; height:60px; margin:0px 0px 0px 0px;
+display:block;
+overflow:hidden;
+} 
+
+
+/* menues */
+
+/* van dentro de containerMenu en medida.css*/
+
+/* menu principal */
+#navContainer{
+	float:right; width:60%; height:50px; padding:45px 0px 0px 0px; text-align:left; margin:0px;
+}
+
+#mainav {
+	float:left; width:/*450px*/100%; height:50px; padding:0px 0px 0px 0px; text-align:left; 
+}
+#mainav ul {
+	  margin:0px; list-style:none; padding:0px;
+}
+#mainav li a {
+/*font: 0.8em arial,sans-serif,verdana;*/ color: #333; padding: 0px 2% 0px 0px; text-decoration: none; 
+}
+
+#mainav li a:hover {
+color: #09C; 
+}
+
+#mainav ul li {
+	display: inline; 
+}
+
+
+/* boton  SELECCIONADO */
+
+#INICIO li#mainav1 a ,
+#CASOS li#mainav2 a,
+#SOLUCIONES li#mainav3 a,
+#CONTACTO li#mainav4 a,
+#TALENTO li#mainav5 a
+{
+color:#09C; font-weight:bold;
+}
+
+
+/* menu extras */
+#menuExtras {
+	float:right; width:100%; height:auto; min-height:80px; padding:20px 0px 0px 0px; text-align:left;  position:relative;
+}
+
+
+.menuExtrasAlign{ position:absolute; top:0; left:0;
+
+}
+
+

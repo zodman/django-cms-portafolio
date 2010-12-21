@@ -1,0 +1,130 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+/* logo Interalia*/
+
+#logoInteralia{
+width:213px; float:left; height:75px; background-image:url(../img/logo_interalia.jpg); margin:20px 0px 0px 20px;
+display:block; overflow:hidden;
+} 
+
+#logoInteralia a{
+width:213px; float:left; height:60px; margin:0px 0px 0px 0px;
+display:block;
+overflow:hidden;
+} 
+
+
+
+/* menu principal */
+
+/*#navContainer{
+	float:right; width:60%; height:50px; padding:45px 0px 0px 0px; text-align:left; margin:0px;
+}
+
+#mainav {
+	float:left; width:100%; height:50px; padding:0px 0px 0px 0px; text-align:left;  
+}
+#mainav ul {
+	  margin:0px; list-style:none; padding:0px;
+}
+#mainav li a {
+color: #333; padding: 0px 2% 0px 0px; text-decoration: none; 
+}
+
+#mainav li a:hover {
+color: #09C; 
+}
+
+#mainav ul li {
+	display: inline; 
+}
+*/
+
+
+/* list de autos */
+#navContainer { width:97%; height:100px; float:left; text-align:left; margin: 0px 0px 0px 0px; background-color:#03F }
+
+
+#mainav { display:none
+}
+
+/*
+#mainav {
+	float:left; width:100%; height:auto; padding:0px 0px 0px 0px; text-align:left; margin: 0px 0px 0px 0px;  background-color:#963  
+}
+
+#mainav  ul {
+	padding: 0px; margin: 0px 0px 0px 10px;
+}
+
+#mainav  ul li {
+border-top: #999 .1em solid; padding: 5px 0px 5px 5px;  background: url(../iphone/flecha_der.gif) no-repeat right top #FFF;   list-style-type:none; text-decoration: none; font: small  Arial, Helvetica, sans-serif ; color: #666971; font-weight:bold;   width:100%; height:40px; line-height:40px; text-align:left;}
+
+#mainav  ul li a  { display:block; width:100%; padding: 0px; height:40px; color: #666;}
+
+*/
+
+/* boton  SELECCIONADO */
+
+#INICIO li#mainav1 a ,
+#CASOS li#mainav2 a,
+#SOLUCIONES li#mainav3 a,
+#CONTACTO li#mainav4 a,
+#TALENTO li#mainav5 a
+{
+color:#09C; font-weight:bold;
+}
+
+
+
+/* derecha espacial para header y contenido por fondo */
+.rightColHeader{ display:none; visibility:hidden;
+}
+
+.rightColContent{ float:left; width:100%; height:auto;  margin:25px 0px 0px  0px; background:url(../img/practicas_textura_content.gif) left top no-repeat;
+}
+
+
+
+
+#menuExtras { display:none
+}
+
+
+/* flash, */
+#flashContainer{ display:none
+}
+
+
+#contentContainer{ float:none; width:100%; height:auto; min-height:250px; margin-left: auto ; margin-right: auto ; overflow:hidden;
+}
+
+/* 2 columnas para sumar el 100% */
+.leftCol{ float:left; width:78.5%; height:auto; margin:0px 0px  0px 0px ; 
+}
+
+.rightCol{ float:right; width:21.5%; height:auto;  margin:0px 0px 0px 0px ; 
+}
+
+.rowFooterTop{ display:none;
+}
+
+.rightColFooter{ float:left; width:100%; height:auto;  margin:10px 0px 0px 0px ; text-align:left; font-size:0.85em
+}
+
+
+/*button de carrousel*/
+
+	.button{ display:none}
+
+article 4m{ display:none}
+article 5m{ display:none}
+#6m{ display:none}
+#siete{ display:none}
+#8m{ display:none}
+#9m{ display:none}
+#10m{ display:none}
+
+

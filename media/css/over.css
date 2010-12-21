@@ -1,0 +1,49 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+/* envolvente casos over */
+#overContainer{ float:left; width:630px; height:235px; margin:0px 5px 0px 5px; 
+}
+
+.overFotoLeft{ float:left; width:360px; height:194px; margin:20px 20px 20px 20px;
+}
+
+.overDatosRight{ float:right; width:230px; height:195px; margin:20px 0px 20px 0px; 
+}
+
+.datosTop{ float:left; width:230px; height:97px; margin:0px 0px 0px 0px; text-align:left;
+}
+
+.datosBottom{ float:left; width:230px; height:97px; margin:0px 0px 0px 0px; text-align:left;position:relative;
+}
+
+
+.datosBottomAlign{ position:absolute; bottom:0; left:0;
+
+}
+
+
+.overServicio{  font-family:Arial, Helvetica, sans-serif; color:#666; font-size:1em; 
+}
+
+.overProyecto{ font-family:Arial, Helvetica, sans-serif; color:#000; font-size:1.1em; font-weight:bold;
+}
+
+.overProyecto a{ font-family:Arial, Helvetica, sans-serif; color:#000; font-size:1.1em; font-weight:bold; text-decoration:none;
+}
+
+.overProyecto a:link{ color:#000; font-size:1.1em; font-weight:bold; text-decoration:none; font-family:Arial, Helvetica, sans-serif; 
+}
+
+.overProyecto a:active{ color: #F60; 
+}
+
+.overProyecto a:visited{ color: #000; 
+}
+
+.overProyecto a:hover{ color:#09C; 
+}
+
+.overPais{  font-family:Arial, Helvetica, sans-serif; color: #09C; font-size:1em;
+}

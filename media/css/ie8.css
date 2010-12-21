@@ -1,0 +1,30 @@
+@charset "utf-8";
+/* CSS Document */
+
+.jcarousel-skin-ie7 .jcarousel-clip-horizontal {
+    width:  180px;
+    height: 97px; margin-left:25px; 
+}
+
+.jcarousel-skin-ie7Nuevos .jcarousel-clip-horizontal {
+    width:  91%;
+    height: 197px; margin-left:25px;
+}
+
+
+.jcarousel-item {
+    float: left;
+    list-style: none;
+    /* We set the width/height explicitly. No width/height causes infinite loops. */
+    width: 180px;
+    height: 97px; 
+}
+
+
+.jcarousel-itemCasos {
+    float: left;
+    list-style: none;
+    /* We set the width/height explicitly. No width/height causes infinite loops. */
+    width: 360px;
+    height: 194px; 
+}

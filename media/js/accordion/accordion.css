@@ -1,0 +1,76 @@
+
+#navigationContainer {
+	width:95%; height:250px;
+}
+#navigation {
+	
+	margin:0px;
+	padding:0px;
+	text-indent:0px;
+	height:250px; 
+	width:95%; 
+}
+#navigation a.head {
+	cursor:pointer;
+	
+	background: url(collapsed.gif) no-repeat scroll 3px 4px;
+	color:#333;
+	display:block;
+	font-weight:bold; font-size:1em;
+	margin:0px;
+	padding:0px;
+	text-indent:14px;
+	text-decoration: none;
+}
+#navigation a.head:hover {
+	color: #09C; background-image: url(expanded.gif);
+}
+
+#navigation a.selected {
+	background-image: url(expanded.gif);color: #09C;
+}
+
+/* sin submenu*/
+
+#navigation a.headSinSubmenu {
+	cursor:pointer;
+	
+	background:url(collapsed_off.gif) no-repeat scroll 3px 4px;
+	color:#333;
+	display:block;
+	font-weight:bold; font-size:1em;
+	margin:0px;
+	padding:0px;
+	text-indent:14px;
+	text-decoration: none;
+}
+
+#navigation a.headSinSubmenu:hover {
+	color: #09C;
+}
+
+/**/
+
+#navigation a.current { color:#F30
+
+}
+#navigation ul {
+	
+	margin:0px;
+	padding:5px 0px 5px 0px;
+	text-indent:0px;
+}
+#navigation li {
+	list-style:none outside none; display:inline;
+}
+#navigation li li a {
+	color: #666;
+	padding:2px 0px 2px 0px;
+	display:block;
+	text-indent:25px;
+	text-decoration: none; border-bottom:dotted #999 1px;
+}
+#navigation li li a:hover {
+	color:#FFF; background-color: #09C
+}
+
