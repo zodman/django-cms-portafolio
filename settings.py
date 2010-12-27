@@ -127,7 +127,7 @@ INSTALLED_APPS = (
     'cms.plugins.inherit',
     # custom cmsplugins
     "cmsplugin_facebook",
-    "plugins.cmsplugin_portafolio"
+    "plugins.portafolio"
 
 )
 # django-cms settings
@@ -140,7 +140,7 @@ CMS_TEMPLATES = (
         ('nav_playground.html', gettext('navigation examples')),
 )
 
-CMS_MEDIA_ROOT = os.path.join(BASE_PATH, 'django_cms/cms/media/cms/')
+CMS_MEDIA_ROOT = os.path.join(BASE_PATH, 'media/cms/')
 
 CMS_SITE_LANGUAGES = {
         1:['es'],
