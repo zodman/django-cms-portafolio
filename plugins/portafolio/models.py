@@ -26,6 +26,7 @@ class Proyect(models.Model):
         return self.name
 class Image(models.Model):
     image = models.ImageField(upload_to= "uploaded_images")
+    main = models.BooleanField(default =False)
     proyect = models.ForeignKey(Proyect, related_name="images")
 
 class PortafolioPlugin(CMSPlugin):

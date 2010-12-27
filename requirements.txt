@@ -5,3 +5,4 @@ south
 -e git+https://github.com/zodman/cmsplugin_facebook.git#egg=cmsplugin_facebook
 -e hg+https://bitbucket.org/smileychris/django-countries#egg=django-countries
 classytags
+sorl-thumbnail
