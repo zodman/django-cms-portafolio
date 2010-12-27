@@ -109,6 +109,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     #django apps
     'south',
+    "sorl.thumbnail",
     #django-cms
     'cms',
 #    'publisher',

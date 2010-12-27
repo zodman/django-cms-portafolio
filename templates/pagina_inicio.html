@@ -27,7 +27,13 @@
     <!--flashcontainer  -->
 </section>
 <section id="moduloCasos"> 
-    <div id="moduloContainer">
+	<div id="moduloContainer">
+		{% block abajo_izquierda%}
+		{% with "220" as with %}
+				{% placeholder abajo_izquierda %}
+			{% endwith %}
+		{% endblock %}
+		{% comment %}
 		<article id="1m">
 			<div class="modulo">
 		        <div class="moduloContent">
@@ -178,7 +184,8 @@
         </div>
         <!--moduloContent -->
       </div>
-      </article>
+	  </article>
+	  {% endcomment %}
       <!-- fin modulo8 -->
     </div>
     <!--moduloContainer -->
