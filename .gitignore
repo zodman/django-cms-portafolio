@@ -33,3 +33,6 @@ PYSMELLTAGS
 tags
 *.db
 local_settings.py
+media/cache/
+media/cms_page_media/1/arkanoid.swf
+media/uploaded_images/
