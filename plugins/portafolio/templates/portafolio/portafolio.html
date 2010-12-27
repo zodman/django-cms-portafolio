@@ -1,0 +1,33 @@
+{% load thumbnail %}
+{% for p in instance.portafolio.all %}
+<article id="{{p.id}}m">
+			<div class="modulo">
+		        <div class="moduloContent">
+				  <a href=""><div class="button" id=""></div></a>
+					  <!--button bubble --> 
+					  <div class="moduloFoto"> 
+					  {% for image in p.images.all %}
+						  {%if image.main %} 
+								{% thumbnail image.image "180x98" crop="center" as img %}
+								<a href=""><img src="{{ img.url }}" width="{{ img.width }}" height="{{img.height }}" title="Proyecto" /></a> 
+								{% endthumbnail %}
+						  {% endif %}
+					  {% endfor %}
+					  </div>
+					  <!--moduloFoto -->
+					  <div id="moduloTexto"> <h2>{{p.service.name}}</h2>
+						  <h1><a href="">{{p.name}}</a></h1>
+						  <h3>{{p.country}}</h3>
+						<p class="liga">
+							<a href="">
+								{{ p.description_short }}
+							</a>
+						</p>
+					  </div>
+		      <!--moduloTexto -->
+			    </div>
+	        <!--moduloContent -->
+		  </div>
+      </article> 
+	  <!--fin modulo1 -->
+	  {% endfor %}
