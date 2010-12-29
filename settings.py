@@ -110,10 +110,6 @@ INSTALLED_APPS = (
     #django apps
     'south',
     "sorl.thumbnail",
-<<<<<<< HEAD
-    "devserver",
-=======
->>>>>>> 6b4f279a3f43d19ce1f1b14a8ce6fcb771e21283
     #django-cms
     'cms',
 #    'publisher',
