@@ -1,0 +1,22 @@
+	<div class="leftColCasos">
+	<div id="menuCasosContainer">
+		<nav id="navigationContainer">
+			<ul id="navigation">
+				{% for c  in portafolio_clients %}			
+					<li>
+						<a class="head" href="?p=1.1.1">{{c.name}}</a>
+						<ul>
+							{% for p in c.proyects.all %}
+							<li><a href="casos.html?p=1.1.1.1">{{p.name}}</a></li>
+							{% endfor%}
+						</ul> 
+					</li>
+				{% endfor %}
+				<li>
+					<a class="headSinSubmenu" href="?p=1.1.2">Teletón</a>
+				</li>
+			</ul>
+		</nav><!--navigationContainer  -->
+	</div><!--menuCasosContainer  -->
+	</div><!--leftColCasos  -->
+
