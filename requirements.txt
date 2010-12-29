@@ -4,5 +4,5 @@ MySQL-python
 south
 -e git+https://github.com/zodman/cmsplugin_facebook.git#egg=cmsplugin_facebook
 -e hg+https://bitbucket.org/smileychris/django-countries#egg=django-countries
-classytags
+-e git+git://github.com/ojii/django-classy-tags.git#egg=django-classy-tags
 sorl-thumbnail==10.12.1
