@@ -110,6 +110,7 @@ INSTALLED_APPS = (
     #django apps
     'south',
     "sorl.thumbnail",
+    "devserver",
     #django-cms
     'cms',
 #    'publisher',
@@ -128,7 +129,8 @@ INSTALLED_APPS = (
     'cms.plugins.inherit',
     # custom cmsplugins
     "cmsplugin_facebook",
-    "plugins.portafolio"
+    #custom cmsapps
+    "portafolio",
 
 )
 # django-cms settings
@@ -136,7 +138,7 @@ gettext = lambda s: s
 
 CMS_TEMPLATES = (
         ('pagina_inicio.html', gettext('Pagina Inicio')),
-        ('col_two.html', gettext('two columns')),
+        ('pagina_casos.html', gettext('Pagina Casos')),
         ('col_three.html', gettext('three columns')),
         ('nav_playground.html', gettext('navigation examples')),
 )
