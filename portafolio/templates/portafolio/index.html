@@ -3,10 +3,8 @@
 
 
 {% block extrahead %}
-
-<!--accordion menu -->
-<link rel="stylesheet" href="{{MEDIA_URL}}js/accordion/accordion.css" />
-
+	<!--accordion menu -->
+	<link rel="stylesheet" href="{{MEDIA_URL}}js/accordion/accordion.css" />
 	<script type="text/javascript" src="{{MEDIA_URL}}js/accordion/chili-1.7.pack.js"></script>
 	<script type="text/javascript" src="{{MEDIA_URL}}js/accordion/jquery.easing.js"></script>
 	<script type="text/javascript" src="{{MEDIA_URL}}js/accordion/jquery.dimensions.js"></script>
@@ -26,7 +24,6 @@
 		});
 	});
 	</script>
-
 {% endblock %}
 
 {% block content %}
@@ -36,27 +33,25 @@
 	<div id="menuCasosContainer">
 		<nav id="navigationContainer">
 			<ul id="navigation">
-				<li>
 				{% load portafolio_menu %}
-				{% portafolio_menu_clientes%}
-				<a class="head" href="?p=1.1.1">Chevrolet</a>
-					<ul>
-						<li><a href="casos.html?p=1.1.1.1">Proyecto1</a></li>
-						<li><a href="?p=1.1.1.2">Proyecto2</a></li>
-						<li><a href="?p=1.1.1.3">Proyecto3</a></li>
-						<li><a href="?p=1.1.1.4">Proyecto4</a></li>
-						<li><a href="?p=1.1.1.5">Proyecto5</a></li>
-						<li><a href="?p=1.1.1.6">Proyecto6</a></li>
-						<li><a href="?p=1.1.1.7">Proyecto7</a></li>
-					</ul> 
-				</li>
+				{% portafolio_menu_client %}
+				{% for c  in portafolio_clients %}			
+					<li>
+						<a class="head" href="?p=1.1.1">{{c.name}}</a>
+						<ul>
+							{% for p in c.proyects.all %}
+							<li><a href="casos.html?p=1.1.1.1">{{p.name}}</a></li>
+							{% endfor%}
+						</ul> 
+					</li>
+				{% endfor %}
 				<li>
 					<a class="headSinSubmenu" href="?p=1.1.2">Teletón</a>
 				</li>
 			</ul>
 		</nav><!--navigationContainer  -->
-</div><!--menuCasosContainer  -->
-</div><!--leftColCasos  -->
+	</div><!--menuCasosContainer  -->
+	</div><!--leftColCasos  -->
 	{% endblock %}
 </div><!--contentContainer  -->
 {% endblock %}
