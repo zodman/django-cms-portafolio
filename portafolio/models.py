@@ -21,6 +21,7 @@ class Proyect(models.Model):
     description_short = models.TextField()
     description_long  = models.TextField()
     url = models.URLField(blank=True)
+    slug = models.SlugField()
 
     def __unicode__(self):
         return self.name

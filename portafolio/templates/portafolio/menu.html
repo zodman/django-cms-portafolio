@@ -7,7 +7,7 @@
 						<a class="head" href="?p=1.1.1">{{c.name}}</a>
 						<ul>
 							{% for p in c.proyects.all %}
-							<li><a href="casos.html?p=1.1.1.1">{{p.name}}</a></li>
+							<li><a href="{% url portafolio-index p.slug %}">{{p.name}}</a></li>
 							{% endfor%}
 						</ul> 
 					</li>
