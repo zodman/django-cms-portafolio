@@ -147,10 +147,9 @@ CMS_SITE_LANGUAGES = {
         1:['es'],
 }
 CMS_MODERATOR = False 
-
+GOOGLE_MAPS_API_KEY = "ABQIAAAA__ShXMvquJtWn_N18hRhhBRdlxeguhVb5aDTQiWeXVdMbc2yzxShEZQi_xkawQWnvbqGT20Lf2Db5A"
 
 try:
     from local_settings import *
 except ImportError: #FIX para el syncdb
     pass
-THUMBNAIL_DEBUG = True

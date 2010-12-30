@@ -1,11 +1,24 @@
 {% extends "base.html" %}
+{% load i18n cms_tags %}
+
+{% block right-header%}
+
+<div class="rightCol">
+    <div class="rightContent">
+      <div id="menuExtras">
+      </div>
+      <!--menuExtras -->
+    </div>
+    <!--rightContent -->
+  </div>
+{% endblock %}
 
 {%block content %}
 
 <div class="leftColSol">
 	<div id="infoContainerLeft">
 		{% block columna_izquierda %}
-				{% placeholder columna_izquireda %}
+				{% placeholder columna_izquierda %}
 		{% endblock %}
 
 	 </div><!--infoContainer -->
