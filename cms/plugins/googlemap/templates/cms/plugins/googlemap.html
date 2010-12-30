@@ -1,11 +1,11 @@
 {% load i18n %}
 <div class="plugin_googlemap">
 	<!--  ATTENTION: set a height for this div in CSS -->
-	<div id="google-map-{{ object.id }}" class="googlemap-map"></div>
+	<div style="width: 630px;height: 250px;" id="google-map-{{ object.id }}" class="googlemap-map"></div>
 
 	<script type="text/javascript">
 		//<![CDATA[
-		(function(){
+		$(document).ready(function (){
 			var geocoder;
 			var map;
 			
@@ -62,7 +62,7 @@
 			}
 			
 			load();
-		})();
+		});
 		//]]>
 	</script>
 {% if object.route_planer %}

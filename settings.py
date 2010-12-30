@@ -121,7 +121,7 @@ INSTALLED_APPS = (
     'cms.plugins.flash',
     'cms.plugins.link',
     'cms.plugins.snippet',
-    'cms.plugins.googlemap',
+   'cms.plugins.googlemap',
     'cms.plugins.teaser',
     'cms.plugins.video',
     'cms.plugins.twitter',

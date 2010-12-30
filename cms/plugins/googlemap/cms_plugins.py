@@ -24,6 +24,6 @@ class GoogleMapPlugin(CMSPluginBase):
         else:
             key = GOOGLE_MAPS_API_KEY
         lang = getattr(request, 'LANGUAGE_CODE', settings.LANGUAGE_CODE[0:2])
-        return Media(js = ('http://maps.google.com/maps?file=api&amp;v=2&amp;key=%s&amp;hl=%s' % (key, lang),))
+        return Media(js = ('http://maps.google.com/maps?file=api&v=2&key=%s&hl=%s' % (key, lang),))
 
 plugin_pool.register_plugin(GoogleMapPlugin)
