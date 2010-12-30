@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{%block content %}
+
+<div class="leftColSol">
+	<div id="infoContainerLeft">
+		{% block columna_izquierda %}
+				{% placeholder columna_izquireda %}
+		{% endblock %}
+
+	 </div><!--infoContainer -->
+</div><!--leftColSol  -->
+<div class="rightColSol">
+	<div id="infoContainerRight">
+		{% block columna_derecha %}
+				{% placeholder columna_derecha %}
+		{% endblock %}
+
+	</div><!--infoContainer  -->
+</div><!--rightColSol  -->
+	
+{% endblock %}
+
+
