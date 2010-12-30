@@ -154,4 +154,4 @@ try:
     from local_settings import *
 except ImportError: #FIX para el syncdb
     pass
-
+THUMBNAIL_DEBUG = True
