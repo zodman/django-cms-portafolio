@@ -138,8 +138,7 @@ gettext = lambda s: s
 CMS_TEMPLATES = (
         ('pagina_inicio.html', gettext('Pagina Inicio')),
         ('pagina_casos.html', gettext('Pagina Casos')),
-        ('col_three.html', gettext('three columns')),
-        ('nav_playground.html', gettext('navigation examples')),
+        ('pagina_soluciones.html', gettext('Pagina Soluciones')),
 )
 
 CMS_MEDIA_ROOT = os.path.join(BASE_PATH, 'media/cms/')
