@@ -8,5 +8,3 @@ south
 sorl-thumbnail==10.12.1
 
 
-
-
