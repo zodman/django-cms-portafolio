@@ -1,57 +1,184 @@
 {% extends "base.html"%}
-{% load i18n cms_tags %}
+{% load i18n cms_tags  portafolio_menu thumbnail %}
+
+
+
 
 
 {% block extrahead %}
+
 	<!--accordion menu -->
+
 	<link rel="stylesheet" href="{{MEDIA_URL}}js/accordion/accordion.css" />
+
 	<script type="text/javascript" src="{{MEDIA_URL}}js/accordion/chili-1.7.pack.js"></script>
+
 	<script type="text/javascript" src="{{MEDIA_URL}}js/accordion/jquery.easing.js"></script>
+
 	<script type="text/javascript" src="{{MEDIA_URL}}js/accordion/jquery.dimensions.js"></script>
+
 	<script type="text/javascript" src="{{MEDIA_URL}}js/accordion/jquery.accordion.js"></script>
 
+
+
+<!-- jCarousel core stylesheet -->
+
+	<link rel="stylesheet" type="text/css" href="{{MEDIA_URL}}js/carousel/jquery.jcarousel.css" />
+
+	<link rel="stylesheet" type="text/css" href="{{MEDIA_URL}}js/carousel/skin_casos.css" />
+
+
+
+	<script type="text/javascript" src="{{MEDIA_URL}}js/carousel/jquery.jcarousel.pack.js"></script>
+
+	<script type="text/javascript" src="{{MEDIA_URL}}js/carousel/jquery.jcarousel.js"></script>
+
 	<script type="text/javascript">
-	jQuery().ready(function(){
-	
+
+	$(document).ready(function(){
+
 		// simple accordion with special markup
-		jQuery('#navigation').accordion({
+
+		$('#navigation').accordion({
+
 			active: false,
+
 			header: '.head',
+
 			navigation: true,
+
 			event: 'click',
+
 			fillSpace: true,
+
 			animated: 'easeslide'
+
 		});
+
+		$('#mycarousel').jcarousel();
+
+
+
 	});
+
 	</script>
+
+{% endblock %}
+
+{% block right-header %}
+
+<div class="rightContent">
+
+    <div id="menuExtras">
+
+	</div>
+
+ </div>
+
 {% endblock %}
 
 {% block content %}
+
 <div id="contentContainer">
+
 	{% block menu_casos %}
-	<div class="leftColCasos">
-	<div id="menuCasosContainer">
-		<nav id="navigationContainer">
-			<ul id="navigation">
-				{% load portafolio_menu %}
-				{% portafolio_menu_client %}
-				{% for c  in portafolio_clients %}			
-					<li>
-						<a class="head" href="?p=1.1.1">{{c.name}}</a>
-						<ul>
-							{% for p in c.proyects.all %}
-							<li><a href="casos.html?p=1.1.1.1">{{p.name}}</a></li>
-							{% endfor%}
-						</ul> 
-					</li>
-				{% endfor %}
-				<li>
-					<a class="headSinSubmenu" href="?p=1.1.2">Teletón</a>
-				</li>
-			</ul>
-		</nav><!--navigationContainer  -->
-	</div><!--menuCasosContainer  -->
-	</div><!--leftColCasos  -->
+
+		{% portafolio_menu_client %}
+
 	{% endblock %}
+
+<div class="rightColCasos">
+
+	<div class="rightColCasosContainer">
+
+		<section id="carrouselCasosContainer">
+
+			<div class=" jcarousel-skin-ie7Casos">
+
+					<div class="jcarousel-container jcarousel-container-horizontal" id="mycarousel" style="display: block;"> 
+
+						<div class="jcarousel-prev jcarousel-prev-horizontal jcarousel-prev-disabled jcarousel-prev-disabled-horizontal" style="display: block;" disabled="true">
+
+						</div>
+
+						<div class="jcarousel-next jcarousel-next-horizontal" style="display: block;" disabled="false">
+
+						</div>
+
+						<div class="jcarousel-clip jcarousel-clip-horizontal">
+
+							<ul id="mycarousel" class="jcarousel-list jcarousel-list-horizontal" style="width: 1835px; left: 0px;">
+
+								{% for i in proyect.images.all %}
+
+								<li class="jcarousel-item jcarousel-item-horizontal jcarousel-item-5 jcarousel-item-5-horizontal" jcarouselindex="{{forloop.counter}}">
+
+								<a href="#">
+
+								{% thumbnail i.image "360x194" crop="center" as img %}
+
+									<img border="0" width="{{ img.width }}" height="{{ img.height }}" alt="" src="{{img.url }}">
+
+								{% endthumbnail %}
+
+									</a>
+
+								</li> 
+
+								{%endfor%}
+
+							</ul>
+
+					</div> 
+
+				</div>
+
+			</div>
+
+		</section><!--carrouselCasosContainer  -->
+
+
+
+		<section id="textosCasosContainer">
+
+			<article>
+
+				<div id="textosCasos">
+
+					<h2>{{ proyect.service.name }}</h2>
+
+						<h1>{{proyect.name}}</h1>
+
+						<h3>{{ proyect.country }}</h3>
+
+						<p class="resumenCasos">
+
+							{{proyect.description_long }}
+
+						</p>
+
+						<a href="{{proyect.url}}">{{proyect.name}}</a>
+
+				</div><!--textosCasos -->
+
+			</article>
+
+				
+
+			<aside>
+
+					<div id="socialesCasos">
+
+					</div><!--socialesCasos -->
+
+			</aside>
+
+		</section><!--textosCasosContainer  -->
+
+	</div><!--rightColCasosContainer  -->
+
+</div>	
+
 </div><!--contentContainer  -->
+
 {% endblock %}
