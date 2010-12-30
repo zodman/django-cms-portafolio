@@ -7,5 +7,3 @@ south
 -e git+git://github.com/ojii/django-classy-tags.git#egg=django-classy-tags
 sorl-thumbnail==10.12.1
 
-
-
