@@ -4,10 +4,10 @@
 			<ul id="navigation">
 				{% for c  in portafolio_clients %}			
 					<li>
-						<a class="head" href="?p=1.1.1">{{c.name}}</a>
+						<a class="head" href="#">{{c.name}}</a>
 						<ul>
 							{% for p in c.proyects.all %}
-							<li><a href="{% url portafolio-index p.slug %}">{{p.name}}</a></li>
+							<li><a href="{% url portafolio-proyect p.slug %}">{{p.name}}</a></li>
 							{% endfor%}
 						</ul> 
 					</li>
