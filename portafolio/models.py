@@ -22,6 +22,8 @@ class Proyect(models.Model):
     description_long  = models.TextField()
     url = models.URLField(blank=True)
     slug = models.SlugField()
+    twitter = models.CharField(max_length=20, help_text="twitt via ..")
+    facebook_like = models.URLField()
 
     def __unicode__(self):
         return self.name
