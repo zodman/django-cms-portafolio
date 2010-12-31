@@ -1,20 +1,44 @@
 {% extends "base.html" %}
 {% load i18n cms_tags %}
 
-{% block tpl_id %}tpl_col_two{% endblock %}
+{% block extrahead %}
+<!-- over bubbles -->
+<link href="{{MEDIA_URL}}css/jquery.bubblepopup.v2.3.1.css" rel="stylesheet" type="text/css" />
+<script src="{{MEDIA_URL}}js/jquery.bubblepopup.v2.3.1.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+<!--
+$(document).ready(function(){
+		$('.button').CreateBubblePopup({
+									   selectable: false,
+									   alwaysVisible: true,
+										position: 'top',
+										align: 'left',
+										width: '680px',
+										height: '255px',
+										tail:{align:'left',hidden: true},
+										innerHtml: '<img src="{{MEDIA_URL}}img/loading.gif" style="border:0px; vertical-align:middle; margin-right:10px; display:inline;" />cargando',
+										innerHtmlStyle: { color:'#FFFFFF', 'text-align':'center' },
+										themeName: 'azure',
+										themePath: '{{MEDIA_URL}}img/jquerybubblepopup-theme'
+								  	  });
+		// add a mouseover event for the "button" element...
+	$('.button').mouseover(function(){
+			var button_id = this.id;
+			var	slug = button_id.split("id-")[1];
+			var button = $(this);
+			var data = '<iframe src="{% url portafolio-small %}?slug='+ slug +'" marginwidth="0" marginheight="0"  vspace="0" hspace="0"  style="width:99%; background-color:#FFF" allowtransparency="true"  scrolling="no"  height="250" frameborder="0">...</iframe>'
+			button.SetBubblePopupInnerHtml(data);
+	}).click(function(){
+			var button_id = this.id;
+			var	slug = button_id.split("id-")[1];
+			document.location= "{% url portafolio-redirect %}?slug=" + slug;
+	}); //end function
+}); //end mouseover event
 
+//-->
+</script>
+{% endblock %}
 {% block content %}
-{%comment%}
-<div id="col1" class="grid_4">	    
-
-		{% include "sidebar_submenu.html" %}	
-		{% block col_sidebar %}
-			{% with "220" as width %}
-	    		{% placeholder col_sidebar %}
-			{% endwith %}
-		{% endblock %}
-    </div>
-{% endcomment %}
 <div class="leftCol">
 <section id="flash">
 	<div id="flashContainer">
@@ -33,166 +57,12 @@
 				{% placeholder abajo_izquierda %}
 			{% endwith %}
 		{% endblock %}
-		{% comment %}
-		<article id="1m">
-			<div class="modulo">
-		        <div class="moduloContent">
-				  <a href="casos.html?p=1.1.1.1"><div class="button" id="1"></div></a>
-					  <!--button bubble --> 
-					  <div class="moduloFoto"> <a href="casos.html?p=1.1.1.1"><img src="proyectos/teleton/small01.jpg" width="180" height="97" border="0" title="Proyecto" /></a> </div>
-					  <!--moduloFoto -->
-					  <div id="moduloTexto"> <h2>Nombre del servicio</h2>
-						<h1><a href="casos.html?p=1.1.1.1">Nombre del proyecto</a></h1>
-						<h3>País</h3>
-						<p class="liga"><a href="casos.html?p=1.1.1.1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur dignissim, lectus sit amet congue molestie, sapien lectus mollis leo, sit amet egestas ipsum nisi id mauris. Praesent fermentum lorem id.</a></p>
-					  </div>
-		      <!--moduloTexto -->
-			    </div>
-	        <!--moduloContent -->
-		  </div>
-      </article> 
-      <!--fin modulo1 -->
-      
-       <article id="2m">
-      <div class="modulo">
-        <div class="moduloContent">
-          <a href="casos.html?p=1.1.1.2"><div class="button" id="2"></div></a>
-          <!--button bubble -->
-          <div class="moduloFoto"> <a href="casos.html?p=1.1.1.2"><img src="proyectos/teleton/small01.jpg" width="180" height="97" border="0" title="Proyecto" /></a> </div>
-          <!--moduloFoto -->
-          <div id="moduloTexto"> <h2>Nombre del servicio</h2>
-            <h1><a href="casos.html?p=1.1.1.2">Nombre del proyecto</a></h1>
-            <h3>País</h3>
-            <p class="liga"><a href="casos.html?p=1.1.1.2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur dignissim, lectus sit amet congue molestie, sapien lectus mollis leo, sit amet egestas ipsum nisi id mauris. Praesent fermentum lorem id.</a></p>
-          </div>
-          <!--moduloTexto -->
-        </div>
-        <!--moduloContent -->
-      </div>
-      </article>
-      <!-- fin modulo2 -->
-      
-       <article id="3m">
-      <div class="modulo">
-        <div class="moduloContent">
-          <a href="casos.html?p=1.1.1.1"><div class="button" id="3"></div></a>
-          <!--button bubble -->
-          <div class="moduloFoto"> <a href="casos.html?p=1.1.1.1"><img src="proyectos/teleton/small01.jpg" width="180" height="97" border="0" title="Proyecto" /></a> </div>
-          <!--moduloFoto -->
-          <div id="moduloTexto"> <h2>Nombre del servicio</h2>
-            <h1><a href="casos.html?p=1.1.1.1">Nombre del proyecto</a></h1>
-            <h3>País</h3>
-            <p class="liga"><a href="casos.html?p=1.1.1.1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur dignissim, lectus sit amet congue molestie, sapien lectus mollis leo, sit amet egestas ipsum nisi id mauris. Praesent fermentum lorem id.</a></p>
-          </div>
-          <!--moduloTexto -->
-        </div>
-        <!--moduloContent -->
-      </div>
-      </article>
-      <!--fin modulo3 -->
-      
-       <article id="4m">
-      <div class="modulo">
-        <div class="moduloContent">
-          <a href="casos.html?p=1.1.1.1"><div class="button" id="4"></div></a>
-          <!--button bubble -->
-          <div class="moduloFoto"> <a href="casos.html?p=1.1.1.1"><img src="proyectos/teleton/small01.jpg" width="180" height="97" border="0" title="Proyecto" /></a> </div>
-          <!--moduloFoto -->
-          <div id="moduloTexto"> <h2>Nombre del servicio</h2>
-            <h1><a href="casos.html?p=1.1.1.1">Nombre del proyecto</a></h1>
-            <h3>País</h3>
-            <p class="liga"><a href="casos.html?p=1.1.1.1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur dignissim, lectus sit amet congue molestie, sapien lectus mollis leo, sit amet egestas ipsum nisi id mauris. Praesent fermentum lorem id.</a></p>
-          </div>
-          <!--moduloTexto -->
-        </div>
-        <!--moduloContent -->
-      </div>
-      </article>
-      <!-- fin modulo4 -->
-      
-      <article id="5m">
-      <div class="modulo">
-        <div class="moduloContent">
-          <a href="casos.html?p=1.1.1.1"><div class="button" id="5"></div></a>
-          <!--button bubble -->
-          <div class="moduloFoto"> <a href="casos.html?p=1.1.1.1"><img src="proyectos/teleton/small01.jpg" width="180" height="97" border="0" title="Proyecto" /></a> </div>
-          <!--moduloFoto -->
-          <div id="moduloTexto"> <h2>Nombre del servicio</h2>
-            <h1><a href="casos.html?p=1.1.1.1">Nombre del proyecto</a></h1>
-            <h3>País</h3>
-            <p class="liga"><a href="casos.html?p=1.1.1.1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur dignissim, lectus sit amet congue molestie, sapien lectus mollis leo, sit amet egestas ipsum nisi id mauris. Praesent fermentum lorem id.</a></p>
-          </div>
-          <!--moduloTexto -->
-        </div>
-        <!--moduloContent -->
-      </div>
-      </article>
-      <!--fin modulo5 -->
-      
-    <article id="6m">
-      <div class="modulo">
-        <div class="moduloContent">
-          <a href="casos.html?p=1.1.1.1"><div class="button" id="6"></div></a>
-          <!--button bubble -->
-          <div class="moduloFoto"> <a href="casos.html?p=1.1.1.1"><img src="proyectos/teleton/small01.jpg" width="180" height="97" border="0" title="Proyecto" /></a> </div>
-          <!--moduloFoto -->
-          <div id="moduloTexto"> <h2>Nombre del servicio</h2>
-            <h1><a href="casos.html?p=1.1.1.1">Nombre del proyecto</a></h1>
-            <h3>País</h3>
-            <p class="liga"><a href="casos.html?p=1.1.1.1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur dignissim, lectus sit amet congue molestie, sapien lectus mollis leo, sit amet egestas ipsum nisi id mauris. Praesent fermentum lorem id.</a></p>
-          </div>
-          <!--moduloTexto -->
-        </div>
-        <!--moduloContent -->
-      </div>
-      </article>
-      <!--fin modulo6 -->
-      
-     <article id="7m">
-      <div class="modulo" id="siete">
-        <div class="moduloContent">
-          <a href="casos.html?p=1.1.1.1"><div class="button" id="7"></div></a>
-          <!--button bubble -->
-          <div class="moduloFoto"> <a href="casos.html?p=1.1.1.1"><img src="proyectos/teleton/small01.jpg" width="180" height="97" border="0" title="Proyecto" /></a> </div>
-          <!--moduloFoto -->
-          <div id="moduloTexto"> <h2>Nombre del servicio</h2>
-            <h1><a href="casos.html?p=1.1.1.1">Nombre del proyecto</a></h1>
-            <h3>País</h3>
-            <p class="liga"><a href="casos.html?p=1.1.1.1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur dignissim, lectus sit amet congue molestie, sapien lectus mollis leo, sit amet egestas ipsum nisi id mauris. Praesent fermentum lorem id.</a></p>
-          </div>
-          <!--moduloTexto -->
-        </div>
-        <!--moduloContent -->
-      </div>
-      </article>
-      <!--fin modulo7 -->
-      
- 
-     <article id="8m">
-      <div class="modulo">
-        <div class="moduloContent">
-          <a href="casos.html?p=1.1.1.1"><div class="button" id="8"></div></a>
-          <!--button bubble -->
-          <div class="moduloFoto"> <a href="casos.html?p=1.1.1.1"><img src="proyectos/teleton/small01.jpg" width="180" height="97" border="0" title="Proyecto" /></a> </div>
-          <!--moduloFoto -->
-          <div id="moduloTexto"> <h2>Nombre del servicio</h2>
-            <h1><a href="casos.html?p=1.1.1.1">Nombre del proyecto</a></h1>
-            <h3>País</h3>
-            <p class="liga"><a href="casos.html?p=1.1.1.1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur dignissim, lectus sit amet congue molestie, sapien lectus mollis leo, sit amet egestas ipsum nisi id mauris. Praesent fermentum lorem id.</a></p>
-          </div>
-          <!--moduloTexto -->
-        </div>
-        <!--moduloContent -->
-      </div>
-	  </article>
-	  {% endcomment %}
       <!-- fin modulo8 -->
     </div>
     <!--moduloContainer -->
   </section> 
-  </div>
+</div>
   <!--leftCol -->
-
 <aside id="columnaPracticas">
   <div class="rightColContent">
 	 <div  class="rightContent">
@@ -201,11 +71,9 @@
 				{% placeholder columna_derecha %}
 			{% endwith %}
 		{% endblock %}
-
     </div>
     <!--rightContent -->
   </div>
   <!--rightColContent -->
   </aside>
-
 {% endblock %}

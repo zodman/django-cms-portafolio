@@ -1118,6 +1118,7 @@ function ImageFlow ()
 					newX = my.imagesDivWidth;
 				}
 
+
 				my.Touch.x = newX;
 				
 				var imageID = Math.round(newX / (my.imagesDivWidth / max));
@@ -1455,42 +1456,7 @@ var domReady = function(handler) { domReadyEvent.add(handler); };
 domReadyEvent.init();
 
 
-/* Create ImageFlow instances when the DOM structure has been loaded */
-domReady(function()
-{
-	var instanceOne = new ImageFlow();
-	instanceOne.init({ ImageFlowID:'myImageFlow' });
-	
-	var target_1 = new ImageFlow();
-	target_1.init({ ImageFlowID:'target_1', onClick: function() { window.open('casos.html?p=1.1.1.1', '_top');  } });
-	
-	var target_2 = new ImageFlow();
-	target_2.init({ ImageFlowID:'target_2', onClick: function() { window.open('casos.html?p=1.1.1.2', '_top');  } });
-	
-	
-	var target_3 = new ImageFlow();
-	target_3.init({ ImageFlowID:'target_3', onClick: function() { window.open('casos.html?p=1.1.1.3', '_top');  } });
-	
-		var target_4 = new ImageFlow();
-	target_4.init({ ImageFlowID:'target_4', onClick: function() { window.open('casos.html?p=1.1.1.4', '_top');  } });
-	
-			var target_5 = new ImageFlow();
-	target_5.init({ ImageFlowID:'target_5', onClick: function() { window.open('casos.html?p=1.1.1.5', '_top');  } });
-	
-			var target_6 = new ImageFlow();
-	target_6.init({ ImageFlowID:'target_6', onClick: function() { window.open('casos.html?p=1.1.1.6', '_top');  } });
-	
-			var target_7 = new ImageFlow();
-	target_7.init({ ImageFlowID:'target_7', onClick: function() { window.open('casos.html?p=1.1.1.7', '_top');  } });
-	
-			var target_8 = new ImageFlow();
-	target_8.init({ ImageFlowID:'target_8', onClick: function() { window.open('casos.html?p=1.1.2', '_top');  } });
-	
-	
-	
-	
-	
-});
+
 
 
 

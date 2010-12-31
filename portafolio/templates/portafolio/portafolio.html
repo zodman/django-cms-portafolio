@@ -3,7 +3,7 @@
 <article id="{{p.id}}m">
 			<div class="modulo">
 		        <div class="moduloContent">
-				  <a href=""><div class="button" id=""></div></a>
+						<div class="button" id="id-{{p.slug}}"></div>
 					  <!--button bubble --> 
 					  <div class="moduloFoto"> 
 					  {% for image in p.images.all %}
@@ -15,7 +15,8 @@
 					  {% endfor %}
 					  </div>
 					  <!--moduloFoto -->
-					  <div id="moduloTexto"> <h2>{{p.service.name}}</h2>
+					  <div id="moduloTexto">
+						  <h2>{{p.service.name}}</h2>
 						  <h1><a href="{% url portafolio-proyect p.slug %}">{{p.name}}</a></h1>
 						  <h3>{{p.country}}</h3>
 						<p class="liga">
@@ -28,6 +29,6 @@
 			    </div>
 	        <!--moduloContent -->
 		  </div>
-      </article> 
+</article> 
 	  <!--fin modulo1 -->
-	  {% endfor %}
+{% endfor %}

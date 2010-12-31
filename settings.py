@@ -130,7 +130,6 @@ INSTALLED_APPS = (
     "cmsplugin_facebook",
     #custom cmsapps
     "portafolio",
-
 )
 # django-cms settings
 gettext = lambda s: s
