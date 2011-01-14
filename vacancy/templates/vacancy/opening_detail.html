@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{%block right-header %}
+<div class="rightCol">
+    <div  class="rightContent">
+      <div id="menuExtras">
+<script src="http://connect.facebook.net/es_LA/all.js#xfbml=1"></script><fb:like href="facebook.com/interalia.net" show_faces="false" id="megusta" width="120" layout="button_count" ></fb:like> 
+      </div>
+      <!--menuExtras -->
+    </div>
+    <!--rightContent -->
+  </div>
+  <!--ightCol -->
+
+{% endblock %}
+
+{% block intro-content %}
+  <div id="introContainer">
+    <p class="enfasisAzul">¡Queremos a los mejores!</p>
+      <p> Como una de las mejores empresas de Internet en México ofrecemos a la gente con talento crecimiento y desarrollo profesional. </p>
+  </div>
+{% endblock %}
+
+
+{% block content %}
+v style="min-height: 350px;" id="contentContainer">
+  <div id="primeraCol">
+   <div id="categorias">
+     <h1>{{ object.title }}</h1>
+     <p>
+     </p>
+	<h2>Descripción</h2>     
+	 <p>
+			{{ object.description }}
+     </p>
+
+		<h2>Requisitos</h2> 
+    		<p>
+			{{ object.require.description }}
+		</p> 
+      <p><strong> <a href="forma.html">Aplica para este puesto »</a> </strong></p><br>
+<br>
+
+</div><!-- categorias -->
+</div><!--primeraCol -->
+    
+    
+    <div id="segundaCol">
+    <div id="categorias"> 
+<p><strong>Ofertas actuales</strong></p>
+<a href="perfil.html">Programador Java</a><br>
+
+<a href="perfil.html">Diseñador web</a><br>
+
+<a href="perfil.html">Programador ActionScript</a><br>
+
+</div><!--categorias -->
+</div><!--segunda -->
+</div>	
+{% endblock %}
