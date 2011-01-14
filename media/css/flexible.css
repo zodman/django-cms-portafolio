@@ -58,10 +58,10 @@ color: #F60;
 
 
 /* derecha espacial para header y contenido por fondo */
-.rightColHeader{ float:right; width:21.5%; height:100px;  margin:0px 0px  0px 0px; background:url(../images/practicas_textura.jpg) left top no-repeat;
+.rightColHeader{ float:right; width:21.5%; height:100px;  margin:0px 0px  0px 0px; background:url(../img/practicas_textura.jpg) left top no-repeat;
 }
 
-.rightColContent{ float:right; width:21.5%; height:auto;  margin:0px 0px 0px  0px; background:url(../images/practicas_textura_content.jpg) left top no-repeat;
+.rightColContent{ float:right; width:21.5%; height:auto;  margin:0px 0px 0px  0px; background:url(../img/practicas_textura_content.jpg) left top no-repeat;
 }
 
 
@@ -86,7 +86,7 @@ color: #F60;
 /* 2 columnas para sumar el 100% en casos */
 
 
-.leftColCasos{ float:left; width:22%; height:auto; min-height:550px;  margin:0px 0px 0px 0px ; background:url(../images/practicas_textura_completo.jpg) left -10px no-repeat; overflow:visible; 
+.leftColCasos{ float:left; width:22%; height:auto; min-height:550px;  margin:0px 0px 0px 0px ; background:url(../img/practicas_textura_completo.jpg) left -10px no-repeat; overflow:visible; 
 }
 
 .rightColCasos{ float:right; width:75%; height:auto; min-height:300px; margin:0px 0px  0px 0px ;  
@@ -193,7 +193,7 @@ color: #F60;
 #primeraCol{ float:left; width:40%; height:auto;  margin:0px 0px 0px 0px ;
 }
 
-#segundaCol{ float:left; width:40%; height:auto; min-height:250px;  margin:0px 0px 0px 0px; background:url(../images/practicas_textura_completo.jpg) no-repeat; border-left:dotted #999 1px;
+#segundaCol{ float:left; width:40%; height:auto; min-height:250px;  margin:0px 0px 0px 0px; background:url(../img/practicas_textura_completo.jpg) no-repeat; border-left:dotted #999 1px;
 }
 
 
