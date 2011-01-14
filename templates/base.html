@@ -3,26 +3,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Interalia</title>
-
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script>
-
 <!-- estilos sitio -->
 <link rel="stylesheet" type="text/css" href="{{MEDIA_URL}}css/flexible.css" media="all" />
      <!--320  mobile-->
 	 <link rel="alternate stylesheet" type="text/css" href="{{MEDIA_URL}}css/320.css" title="320"/>
-    
-  
 <!-- ajuste  columnas -->
 <script type="text/javascript" src="{{MEDIA_URL}}js/event_listeners.js"></script>
 <script type="text/javascript" src="{{MEDIA_URL}}js/resolution.js"></script> 
-    
-    
 <!--modernizr -->
 <script type="text/javascript" src="{{MEDIA_URL}}js/modernizr-1.6.min.js"></script>
-    
-    
 <link rel="SHORTCUT ICON" href="{{MEDIA_URL}}img/favicon.ico"/>
-    
     <meta name="keywords" content="Interalia">
 
 	<meta name="description" content="Interalia">
@@ -45,7 +36,6 @@
 <!--header -->
 <header id="headerContainer">
   <div class="leftCol">
-
       <div id="logoInteralia"><a href="index.html"  title="Interalia :: Soluciones interactivas"></a></div>
       <!--logoInteralia -->
       <div id="navContainer">
@@ -82,6 +72,9 @@
 
 
 <!--contenido -->
+
+{% block intro-content %}
+{% endblock %}
 
 <div id="contentContainer">
 	{% block content %}

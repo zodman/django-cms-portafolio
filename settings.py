@@ -130,6 +130,7 @@ INSTALLED_APPS = (
     "cmsplugin_facebook",
     #custom cmsapps
     "portafolio",
+    "vacancy"
 )
 # django-cms settings
 gettext = lambda s: s
@@ -137,7 +138,7 @@ gettext = lambda s: s
 CMS_TEMPLATES = (
         ('pagina_inicio.html', gettext('Pagina Inicio')),
         ('pagina_casos.html', gettext('Pagina Casos')),
-        ('pagina_soluciones.html', gettext('Pagina Soluciones')),
+        ('pagina_2col.html', gettext('Pagina 2 columnas')),
 )
 
 CMS_MEDIA_ROOT = os.path.join(BASE_PATH, 'media/cms/')
