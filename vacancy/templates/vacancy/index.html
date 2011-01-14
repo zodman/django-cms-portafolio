@@ -1,4 +1,19 @@
 {% extends "base.html"%}
+
+{%block right-header %}
+<div class="rightCol">
+    <div  class="rightContent">
+      <div id="menuExtras">
+<script src="http://connect.facebook.net/es_LA/all.js#xfbml=1"></script><fb:like href="facebook.com/interalia.net" show_faces="false" id="megusta" width="120" layout="button_count" ></fb:like> 
+      </div>
+      <!--menuExtras -->
+    </div>
+    <!--rightContent -->
+  </div>
+  <!--ightCol -->
+
+{% endblock %}
+
 {% block intro-content %}
   <div id="introContainer">
     <p class="enfasisAzul">¡Queremos a los mejores!</p>
@@ -9,37 +24,32 @@
   <div id="primeraCol">
 		<div id="categorias">
 		   <h2>
-			   <img src="images/talento_aplica.jpg" width="110" height="73" hspace="10" align="left" />
+			   <img src="{{MEDIA_URL}}img/talento_aplica.jpg" width="110" height="73" hspace="10" align="left" />
 			   Aplica tu talento
 			</h2>
 			<strong>Profesionistas</strong><br />
 	Estamos continuamente buscando a los mejores en: 
 	Diseño Web, Programación AS3, 
-	C++, PHP, J2EE, comunicación y publicidad
+	C++, PHP, J2EE, comunicación y publicidad.
 		</div><!-- categorias -->
 
 		<div id="categorias">
 				<h2>
-					<img src="images/talento_desarrolla.jpg" width="110" height="73" hspace="10" align="left" />
+					<img src="{{MEDIA_URL}}img/talento_desarrolla.jpg" width="110" height="73" hspace="10" align="left" />
 				Desarrolla tu talento
 				</h2>
 		<strong>Trainees</strong><br />
 	Para formar parte de Interalia tienes que estar en
 	el último año de la carrera o ser recién graduado de las áreas en qué solicitamos.
 		</div><!--categorias -->
-		<div id="categorias"> 
-		 <p class="enfasis">¿Crees ser uno de ellos?</p>
-			  <p><strong> <a href="forma.html">Aplica para una oferta actual o envíanos tu curriculum &raquo;</a> </strong></p>
-		</div>
     </div><!--primeraCol -->
     
     <div id="segundaCol">
 		<div id="categorias"> 
 			<p><strong>Ofertas actuales</strong></p>
-			<a href="perfil.html">Programador Java</a><br />
-			<a href="perfil.html">Diseñador web</a><br />
-			<a href="perfil.html">Programador ActionScript</a><br />
-
+			{%for i in opens %}
+			<a href="{% url job-detail i.opening.slug %}">{{ i.opening.title }}</a><br />
+			{% endfor %}
 		</div><!--categorias -->
 	</div><!--segunda -->
 {% endblock %}

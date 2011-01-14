@@ -107,12 +107,9 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.admin',
-    #django apps
-    'south',
-    "sorl.thumbnail",
     #django-cms
     'cms',
-#    'publisher',
+    #'publisher',
     'mptt',
     'menus',
     'cms.plugins.text',
@@ -121,7 +118,7 @@ INSTALLED_APPS = (
     'cms.plugins.flash',
     'cms.plugins.link',
     'cms.plugins.snippet',
-   'cms.plugins.googlemap',
+    'cms.plugins.googlemap',
     'cms.plugins.teaser',
     'cms.plugins.video',
     'cms.plugins.twitter',
@@ -130,7 +127,11 @@ INSTALLED_APPS = (
     "cmsplugin_facebook",
     #custom cmsapps
     "portafolio",
-    "vacancy"
+    "vacancy",
+    #django apps
+    'south',
+    "sorl.thumbnail",
+    'autofixture',
 )
 # django-cms settings
 gettext = lambda s: s
