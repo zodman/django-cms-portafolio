@@ -140,7 +140,6 @@ gettext = lambda s: s
 
 CMS_TEMPLATES = (
         ('pagina_inicio.html', gettext('Pagina Inicio')),
-        ('pagina_casos.html', gettext('Pagina Casos')),
         ('pagina_2col.html', gettext('Pagina 2 columnas')),
 )
 
