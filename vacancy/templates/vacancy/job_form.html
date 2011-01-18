@@ -1,0 +1,32 @@
+{% extends "vacancy/index.html" %}
+  {% block content %}
+ <div id="contentContainer" style="min-height:350px">
+	 <div id="primeraCol">
+	  <div>
+			  <a href="{%url  job-detail open.slug %}">Ver descripci&oacute;n</a>
+		  </div>
+
+	  <div id="categorias">
+     <form action="" method="post">
+		{%for field in form %}
+		 <div class="formaAlto">    
+			  <span id="name">
+					<label>
+						{{field.label}}<br />
+						{{field}}
+					</label><br />
+					<span class="textfieldRequiredMsg">{{field.help_text }}</span>
+			  </span> 
+		  </div>
+		  {%endfor %}
+
+		<input name="Enviar" type="button" value="Enviar" />
+		</form>
+ </div><!--categorias -->
+</div><!--primeraCol -->
+{%block list-opening %}
+	{{block.super}}
+{% endblock %}
+
+
+{% endblock %}    
