@@ -132,6 +132,8 @@ INSTALLED_APPS = (
     'south',
     "sorl.thumbnail",
     'autofixture',
+    'uni_form',
+    'devserver',
 )
 # django-cms settings
 gettext = lambda s: s

@@ -6,5 +6,4 @@ south
 -e hg+https://bitbucket.org/smileychris/django-countries#egg=django-countries
 -e git+git://github.com/ojii/django-classy-tags.git#egg=django-classy-tags
 sorl-thumbnail==10.12.1
-
-
+django-uni-form

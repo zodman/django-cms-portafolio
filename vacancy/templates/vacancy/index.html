@@ -1,5 +1,4 @@
 {% extends "base.html"%}
-
 {%block right-header %}
 <div class="rightCol">
     <div  class="rightContent">
@@ -19,7 +18,8 @@
     <p class="enfasisAzul">¡Queremos a los mejores!</p>
       <p> Como una de las mejores empresas de Internet en México ofrecemos a la gente con talento crecimiento y desarrollo profesional. </p>
   </div>
-{% endblock %}
+  {% endblock %}
+
 {% block content %}
   <div id="primeraCol">
 		<div id="categorias">
@@ -42,17 +42,9 @@
 	Para formar parte de Interalia tienes que estar en
 	el último año de la carrera o ser recién graduado de las áreas en qué solicitamos.
 		</div><!--categorias -->
-    </div><!--primeraCol -->
-    
-    <div id="segundaCol">
-		<div id="categorias"> 
-			<p><strong>Ofertas actuales</strong></p>
-			{%for i in opens %}
-			<a href="{% url job-detail i.opening.slug %}">{{ i.opening.title }}</a><br />
-			{% endfor %}
-		</div><!--categorias -->
-	</div><!--segunda -->
+	</div><!--primeraCol -->
+	{% block list-opening %}
+		{% load vacancy_tags %}
+		{% list_openings %}	
+	{% endblock %}
 {% endblock %}
-<!--contentContainer  -->
-
-
