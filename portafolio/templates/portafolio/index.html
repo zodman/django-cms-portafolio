@@ -72,7 +72,10 @@
 						<h1>{{proyect.name}}</h1>
 						<h3>{{ proyect.country.name }} <img src="{{proyect.country.flag}}"></h3>
 						<p class="resumenCasos">
-							{{proyect.description_long }}
+							{{proyect.description_short }}
+							</p>
+							<p>
+								{{proyect.description_long }}
 							</p>
 						<a href="{{proyect.url}}">{{proyect.get_url}}</a>
 				</div><!--textosCasos -->
