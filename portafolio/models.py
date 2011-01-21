@@ -1,6 +1,8 @@
 from django.db import models
 from django_countries import CountryField
 from cms.models import CMSPlugin
+from django.core.exceptions import ValidationError
+
 
 class Service(models.Model):
     name = models.CharField(max_length=100)
@@ -13,6 +15,7 @@ class Client(models.Model):
     def __unicode__(self):
         return self.name
 
+
 class Proyect(models.Model):
     service = models.ForeignKey(Service, related_name="proyects")
     country = CountryField()
@@ -20,11 +23,23 @@ class Proyect(models.Model):
     name = models.CharField(max_length= 100)
     description_short = models.TextField()
     description_long  = models.TextField()
-    url = models.URLField(blank=True)
+    url = models.URLField(blank=True )
     slug = models.SlugField()
     twitter = models.CharField(max_length=20, help_text="twitt via ..")
     facebook_like = models.URLField()
 
+    @models.permalink
+    def get_absolute_url(self):
+        return ("portafolio-proyect", [self.slug])
+    def get_url(self):
+        if "http://" in self.url:
+            st = self.url.split("http://")[1]
+        elif "https://" in self.url:
+            st =  self.url.split("https://")[1]
+        else:
+            st = self.url
+        return st.replace("/","")
+        
     def __unicode__(self):
         return self.name
 class Image(models.Model):
