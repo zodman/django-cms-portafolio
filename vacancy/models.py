@@ -1,5 +1,9 @@
 from django.db import models
 from django.shortcuts import redirect
+from django.db.models.signals import post_save
+import twitter
+import settings
+
 
 class Candidate(models.Model):
     name = models.CharField(max_length=200, unique = True)
@@ -35,4 +39,3 @@ class EnableOpening(models.Model):
         return ("job-detail", [self.id])
     def __unicode__(self):
         return self.opening.title
-

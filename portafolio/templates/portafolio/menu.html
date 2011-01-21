@@ -7,7 +7,7 @@
 						<a class="head" href="#">{{c.name}}</a>
 						<ul>
 							{% for p in c.proyects.all %}
-							<li><a href="{% url portafolio-proyect p.slug %}">{{p.name}}</a></li>
+							<li><a class="{% if p == actual%}current{% endif %}" href="{% url portafolio-proyect p.slug %}">{{p.name}}</a></li>
 							{% endfor%}
 						</ul> 
 					</li>

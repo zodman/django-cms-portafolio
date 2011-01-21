@@ -51,7 +51,8 @@
 
 /**/
 
-#navigation a.current { color:#F30
+#navigation a.current { 
+	color:#F30 !important; 
 
 }
 #navigation ul {
@@ -64,11 +65,13 @@
 	list-style:none outside none; display:inline;
 }
 #navigation li li a {
-	color: #666;
+	color: #666 !important;
 	padding:2px 0px 2px 0px;
 	display:block;
 	text-indent:25px;
 	text-decoration: none; border-bottom:dotted #999 1px;
+	
+	font-weight:normal;
 }
 #navigation li li a:hover {
 	color:#FFF; background-color: #09C

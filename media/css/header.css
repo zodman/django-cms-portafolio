@@ -49,7 +49,7 @@ color: #09C;
 
 /* boton  SELECCIONADO */
 
-.selected a
+nav li.selected a
 {
 color:#0099CC !important; 
 font-weight:bold;
