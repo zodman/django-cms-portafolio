@@ -33,7 +33,9 @@ overflow:hidden;
 	  margin:0px; list-style:none; padding:0px;
 }
 #mainav li a {
-/*font: 0.8em arial,sans-serif,verdana;*/ color: #333; padding: 0px 2% 0px 0px; text-decoration: none; 
+/*font: 0.8em arial,sans-serif,verdana;*/ 
+	color: #333; 
+	padding: 0px 2% 0px 0px; text-decoration: none; 
 }
 
 #mainav li a:hover {
@@ -47,13 +49,10 @@ color: #09C;
 
 /* boton  SELECCIONADO */
 
-#INICIO li#mainav1 a ,
-#CASOS li#mainav2 a,
-#SOLUCIONES li#mainav3 a,
-#CONTACTO li#mainav4 a,
-#TALENTO li#mainav5 a
+.selected a
 {
-color:#09C; font-weight:bold;
+color:#0099CC !important; 
+font-weight:bold;
 }
 
 

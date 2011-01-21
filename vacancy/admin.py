@@ -11,9 +11,13 @@ class CandidatesInline(admin.TabularInline):
     model = Candidate
     extra = 1
 
-
+class CandidateAdmin(admin.ModelAdmin):
+    list_display = ("name", "email", "phone", "opening", "created_on")
+    list_display_links = ("name","email")
+    search_fields = ("name","email",)
+    list_select_related = True
 class EnOpAdmin(admin.ModelAdmin):
-    list_display = ("opening","get_candidates")
+    list_display = ("opening","get_candidates", "created_on")
     raw_id_fields = ("opening",)
     inlines = [CandidatesInline]
 
@@ -22,5 +26,5 @@ class EnOpAdmin(admin.ModelAdmin):
 
 admin.site.register(Opening, OpeAdmin)
 admin.site.register(Require)
-admin.site.register(Candidate)
+admin.site.register(Candidate, CandidateAdmin)
 admin.site.register(EnableOpening, EnOpAdmin)
