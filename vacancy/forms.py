@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from django import forms as form
+from django.db import IntegrityError
 from uni_form.helpers import FormHelper, Submit, Reset
 from uni_form.helpers import Layout, Fieldset, Row, HTML
 from uni_form.helpers import FormHelper, Submit
@@ -19,7 +20,12 @@ class ApplyForm(form.Form):
         email = self.cleaned_data["email"]
         phone = self.cleaned_data["phone"]
         cv = self.cleaned_data["cv_file"]
-        candidate, created = Candidate.objects.get_or_create(name = name, email = email, opening = op)
+        try:
+            candidate, created = Candidate.objects.get_or_create(name = name, email = email)
+        except:
+            return None
+        if op:
+            candidate.opening = op
         candidate.phone = phone
         candidate.cv = cv
         candidate.save()
