@@ -117,7 +117,7 @@ INSTALLED_APPS = (
     'cms.plugins.file',
     'cms.plugins.flash',
     'cms.plugins.link',
-    'cms.plugins.snippet',
+     #'cms.plugins.snippet',
     'cms.plugins.googlemap',
     'cms.plugins.teaser',
     'cms.plugins.video',
@@ -133,7 +133,7 @@ INSTALLED_APPS = (
     "sorl.thumbnail",
     'autofixture',
     'uni_form',
-    'devserver',
+ #   'devserver',
 )
 # django-cms settings
 gettext = lambda s: s

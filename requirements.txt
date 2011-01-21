@@ -9,3 +9,4 @@ sorl-thumbnail==10.12.1
 django-uni-form
 django-devserver
 django-autofixture
+-e git+git://github.com/maccesch/cmsplugin-contact.git#egg=cmsplugin-contact

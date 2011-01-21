@@ -27,7 +27,7 @@ class Opening(models.Model):
         return self.title
 
 class EnableOpening(models.Model):
-    opening = models.ForeignKey(Opening)
+    opening = models.ForeignKey(Opening, related_name="enable_openings")
     created_on = models.DateTimeField(auto_now_add = True)
     updated_on = models.DateTimeField(auto_now = True)
 
