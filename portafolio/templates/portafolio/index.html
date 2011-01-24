@@ -72,10 +72,10 @@
 						<h1>{{proyect.name}}</h1>
 						<h3>{{ proyect.country.name }}</h3>
 						<p class="resumenCasos">
-							{{proyect.description_short }}
+							{{proyect.description_short|safe }}
 							</p>
 							<p>
-								{{proyect.description_long }}
+								{{proyect.description_long|safe }}
 							</p>
 						<a href="{{proyect.url}}">{{proyect.get_url}}</a>
 				</div><!--textosCasos -->
