@@ -31,7 +31,7 @@ domReady(function()
 
 	<span class="overServicio">{{proyect.service}}</span><br />
 	<span class="overProyecto"><a href="{% url  portafolio-proyect  proyect.slug %}">{{ proyect.name }}</a></span><br />
-	<span class="overPais">{{ proyect.country }}</span><br /><br /> 
+	<span class="overPais">{{ proyect.country.name }}</span><br /><br /> 
 
 <div id="target" class="imageflow">
   {% for image in proyect.images.all %}

@@ -41,3 +41,5 @@ def send_cv(request):
     opening = None
     return _process_cv(request,opening)
 
+def facebook(request):
+    return direct_to_template(request, "vacancy/facebook.html")
