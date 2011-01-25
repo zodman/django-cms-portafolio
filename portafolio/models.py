@@ -1,5 +1,4 @@
 from django.db import models
-from django_countries import CountryField
 from cms.models import CMSPlugin
 from django.core.exceptions import ValidationError
 
@@ -15,10 +14,14 @@ class Client(models.Model):
     def __unicode__(self):
         return self.name
 
+class Country(models.Model):
+    name = models.CharField(max_length = 100)
+    def __unicode__(self):
+        return self.name
 
 class Proyect(models.Model):
     service = models.ForeignKey(Service, related_name="proyects")
-    country = CountryField()
+    country = models.ForeignKey(Country, related_name="proyects")
     client = models.ForeignKey(Client, related_name ="proyects")
     name = models.CharField(max_length= 100)
     description_short = models.TextField()
