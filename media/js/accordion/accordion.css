@@ -74,6 +74,8 @@
 	font-weight:normal;
 }
 #navigation li li a:hover {
-	color:#FFF; background-color: #09C
+	color:white !important ; 
+	background-color: #09C
+
 }
 
