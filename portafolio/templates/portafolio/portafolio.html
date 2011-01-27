@@ -22,7 +22,7 @@
 
 						<p class="liga">
 						<a href="{% url portafolio-proyect p.slug %}">
-								{{ p.description_short }}
+								{{ p.description_short|safe }}
 							</a>
 						</p>
 					  </div>
