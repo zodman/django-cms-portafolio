@@ -1,25 +1,23 @@
-'''
-Created on Dec 10, 2010
-
-@author: Christopher Glass <christopher.glass@divio.ch>
-'''
-
-
+# -*- coding: utf-8 -*-
 from __future__ import with_statement
+from cms.admin.dialog.forms import ModeratorForm, PermissionForm, \
+    PermissionAndModeratorForm
+from cms.admin.dialog.views import _form_class_selector
 from cms.models.pagemodel import Page
 from cms.models.permissionmodels import GlobalPagePermission
-from cms.tests import base
-from cms.tests.base import CMSTestCase
-from django.conf import settings
+from cms.test import testcases as base
+from cms.test.testcases import CMSTestCase, URL_CMS_PAGE_DELETE, URL_CMS_PAGE
+from cms.test.util.context_managers import SettingsOverride
 from django.contrib.auth.models import User, Permission
 from django.contrib.sites.models import Site
+from django.core.urlresolvers import reverse
 
 class AdminTestCase(CMSTestCase):
     
-    def _get_guys(self):
-        admin = User(username="admin", is_staff = True, is_active = True, is_superuser = True)
-        admin.set_password("admin")
-        admin.save()
+    def _get_guys(self, admin_only=False):
+        admin = self.get_superuser()
+        if admin_only:
+            return admin
         self.login_user(admin)
         USERNAME = 'test'
         
@@ -118,3 +116,48 @@ class AdminTestCase(CMSTestCase):
         self.assertEqual(page.reverse_id, REVERSE_ID)
         title = page.get_title_obj()
         self.assertEqual(title.overwrite_url, None)
+
+    def test_02_delete(self):
+        admin = self._get_guys(True)
+        page = self.create_page(user=admin, title="delete-page", published=True)
+        child = self.create_page(page, user=admin, title="delete-page", published=True)
+        self.login_user(admin)
+        data = {'post': 'yes'}
+        response = self.client.post(URL_CMS_PAGE_DELETE % page.pk, data)
+        self.assertRedirects(response, URL_CMS_PAGE)
+        self.assertRaises(Page.DoesNotExist, self.reload, page)
+        self.assertRaises(Page.DoesNotExist, self.reload, child)
+        
+    def test_03_admin_dialog_form_no_moderation_or_permissions(self):
+        with SettingsOverride(CMS_MODERATOR=False, CMS_PERMISSION=False):
+            result = _form_class_selector()
+            self.assertEqual(result, None)
+            
+    def test_04_admin_dialog_form_permission_only(self):
+        with SettingsOverride(CMS_MODERATOR=False, CMS_PERMISSION=True):
+            result = _form_class_selector()
+            self.assertEqual(result, PermissionForm)
+            
+    def test_05_admin_dialog_form_moderation_only(self):
+        with SettingsOverride(CMS_MODERATOR=True, CMS_PERMISSION=False):
+            result = _form_class_selector()
+            self.assertEqual(result, ModeratorForm)
+            
+    def test_05_admin_dialog_form_moderation_and_permisison(self):
+        with SettingsOverride(CMS_MODERATOR=True, CMS_PERMISSION=True):
+            result = _form_class_selector()
+            self.assertEqual(result, PermissionAndModeratorForm)
+
+    def test_06_search_fields(self):
+        superuser = self._get_guys(admin_only=True)
+        from django.contrib.admin import site
+        with self.login_user_context(superuser):
+            for model, admin in site._registry.items():
+                if model._meta.app_label != 'cms':
+                    continue
+                if not admin.search_fields:
+                    continue
+                url = reverse('admin:cms_%s_changelist' % model._meta.module_name)
+                response = self.client.get('%s?q=1' % url)
+                errmsg = response.content
+                self.assertEqual(response.status_code, 200, errmsg)

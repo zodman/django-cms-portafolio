@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from menus.menu_pool import menu_pool
 from menus.base import Menu, NavigationNode, Modifier
 from cms.utils import get_language_from_request
@@ -157,31 +158,44 @@ menu_pool.register_modifier(NavExtender)
 
 
 class SoftRootCutter(Modifier):
+    """
+    If anyone understands this, PLEASE write a meaningful description here!
+    """
     def modify(self, request, nodes, namespace, root_id, post_cut, breadcrumb):
+        # only apply this modifier if we're pre-cut (since what we do is cut)
         if post_cut or not settings.CMS_SOFTROOT:
             return nodes
         selected = None
         root_nodes = []
+        # find the selected node as well as all the root nodes
         for node in nodes:
             if node.selected:
                 selected = node
             if not node.parent:
                 root_nodes.append(node)
         
+        # if we found a selected ...
         if selected:
+            # and the selected is a softroot
             if selected.attr.get("soft_root", False):
+                # get it's descendants
                 nodes = selected.get_descendants()
+                # remove the link to parent
                 selected.parent = None
+                # make the selected page the root in the menu
                 nodes = [selected] + nodes
             else:
-                nodes = self.find_ancestors(selected, nodes)
-            nodes = self.find_children(selected, nodes)
+                # if it's not a soft root, walk ancestors (upwards!)
+                nodes = self.find_ancestors_and_remove_children(selected, nodes)
+            # remove child-softroots from descendants (downwards!)
+            nodes = self.find_and_remove_children(selected, nodes)
         else:
+            # for all nodes in root, remove child-sofroots (downwards!)
             for node in root_nodes:
-                self.find_children(node, nodes)
+                self.find_and_remove_children(node, nodes)
         return nodes   
     
-    def find_children(self, node, nodes):
+    def find_and_remove_children(self, node, nodes):
         for n in node.children:
             if n.attr.get("soft_root", False):
                 self.remove_children(n, nodes)
@@ -193,25 +207,24 @@ class SoftRootCutter(Modifier):
             self.remove_children(n, nodes)
         node.children = []
     
-    def find_ancestors(self, node, nodes):
-        is_root = False
+    def find_ancestors_and_remove_children(self, node, nodes):
+        """
+        Check ancestors of node for soft roots
+        """
         if node.parent:
             if node.parent.attr.get("soft_root", False):
-                is_root = True
                 nodes = node.parent.get_descendants()
                 node.parent.parent = None
                 nodes = [node.parent] + nodes
             else:
-                nodes = self.find_ancestors(node.parent, nodes)
+                nodes = self.find_ancestors_and_remove_children(node.parent, nodes)
         else:
             for n in nodes:
                 if n != node and not n.parent:
-                    self.find_children(n, nodes)
+                    self.find_and_remove_children(n, nodes)
         for n in node.children:
             if n != node:
-                self.find_children(n, nodes)
-            if is_root:
-                n.parent = None
+                self.find_and_remove_children(n, nodes)
         return nodes
     
 menu_pool.register_modifier(SoftRootCutter)

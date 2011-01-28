@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django.conf import settings
 from django.db import models
 from django.contrib.sites.models import Site
@@ -460,6 +461,7 @@ class PagePermissionsPermissionManager(models.Manager):
         for permission in qs:
             is_allowed = getattr(permission, attr)
             if is_allowed:
+
                 # can add is special - we are actually adding page under current page
                 if permission.grant_on & MASK_PAGE or attr is "can_add":
                     page_id_allow_list.append(permission.page.id)
@@ -467,7 +469,6 @@ class PagePermissionsPermissionManager(models.Manager):
                     page_id_allow_list.extend(permission.page.get_children().values_list('id', flat=True))
                 elif permission.grant_on & MASK_DESCENDANTS:
                     page_id_allow_list.extend(permission.page.get_descendants().values_list('id', flat=True))
-        # store value in cache
         #set_permission_cache(user, attr, page_id_allow_list)
         return page_id_allow_list
 

@@ -2,36 +2,31 @@
 from cms.tests.admin import AdminTestCase
 from cms.tests.apphooks import ApphooksTestCase
 from cms.tests.docs import DocsTestCase
-from cms.tests.menu import MenusTestCase
+from cms.tests.menu import FixturesMenuTests, MenuTests, AdvancedSoftrootTests
 from cms.tests.navextender import NavExtenderTestCase
 from cms.tests.nonroot import NonRootCase
-from cms.tests.page import PagesTestCase
+from cms.tests.page import PagesTestCase, NoAdminPageTests
 from cms.tests.permmod import PermissionModeratorTestCase
-from cms.tests.placeholder import PlaceholderTestCase
+from cms.tests.placeholder import PlaceholderTestCase, PlaceholderActionTests
+from cms.tests.placeholder import PlaceholderModelTests
 from cms.tests.plugins import PluginManyToManyTestCase, PluginsTestCase
 from cms.tests.rendering import RenderingTestCase
 from cms.tests.reversion_tests import ReversionTestCase
 from cms.tests.site import SiteTestCase
-from cms.utils import urlutils
-import doctest
-import unittest
-
-
-def suite():
-    s = unittest.TestSuite()
-    s.addTest(doctest.DocTestSuite(urlutils))
-    s.addTest(unittest.defaultTestLoader.loadTestsFromTestCase(PagesTestCase))
-    s.addTest(unittest.defaultTestLoader.loadTestsFromTestCase(SiteTestCase))
-    s.addTest(unittest.defaultTestLoader.loadTestsFromTestCase(NavExtenderTestCase))
-    s.addTest(unittest.defaultTestLoader.loadTestsFromTestCase(NonRootCase))
-    s.addTest(unittest.defaultTestLoader.loadTestsFromTestCase(PluginsTestCase))
-    s.addTest(unittest.defaultTestLoader.loadTestsFromTestCase(ReversionTestCase))
-    s.addTest(unittest.defaultTestLoader.loadTestsFromTestCase(PermissionModeratorTestCase))
-    s.addTest(unittest.defaultTestLoader.loadTestsFromTestCase(MenusTestCase))
-    s.addTest(unittest.defaultTestLoader.loadTestsFromTestCase(RenderingTestCase))
-    s.addTest(unittest.defaultTestLoader.loadTestsFromTestCase(PlaceholderTestCase))
-    s.addTest(unittest.defaultTestLoader.loadTestsFromTestCase(DocsTestCase))
-    s.addTest(unittest.defaultTestLoader.loadTestsFromTestCase(PluginManyToManyTestCase))
-    s.addTest(unittest.defaultTestLoader.loadTestsFromTestCase(ApphooksTestCase))
-    s.addTest(unittest.defaultTestLoader.loadTestsFromTestCase(AdminTestCase))
-    return s
+from cms.tests.urlutils import UrlutilsTestCase
+from cms.tests.publisher import PublisherTestCase
+from cms.tests.multilingual import MultilingualTestCase
+from cms.tests.mail import MailTestCase
+from cms.tests.settings import SettingsTests
+from cms.tests.forms import FormsTestCase
+from cms.tests.toolbar import ToolbarTests
+from cms.tests.middleware import MiddlewareTestCase
+from cms.tests.views import ViewTests
+try:
+    from cms.tests.javascript import JavascriptTestCase
+except ImportError:
+    import warnings
+    import traceback
+    exc = traceback.format_exc()
+    warnings.warn("JavascriptTestCase cannot be run: %s" % exc)
+    

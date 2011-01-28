@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import datetime
 from django.utils.translation import ugettext as _
 from django.conf import settings
@@ -179,12 +180,9 @@ def approve_page(request, page):
     moderation_level, moderation_required = get_test_moderation_level(page, request.user, False)
     if not moderator_should_approve(request, page):
         # escape soon if there isn't any approval required by this user
-        try:    # it is possible publisher_public doesn't exist - first time publish
-            if page.get_absolute_url() != page.publisher_public.get_absolute_url():
-                page.publish()
-            else:
-                return
-        except:
+        if not page.publisher_public or page.get_absolute_url() != page.publisher_public.get_absolute_url():
+            page.publish()
+        else:
             return
     if not moderation_required:
         # this is a second case - user can publish changes
@@ -195,17 +193,24 @@ def approve_page(request, page):
             page.publish()
     else:
         # first case - just mark page as approved from this user
-        PageModeratorState(user=request.user, page=page, action=PageModeratorState.ACTION_APPROVE).save() 
+        PageModeratorState(user=request.user, page=page, action=PageModeratorState.ACTION_APPROVE).save()
+    page.save(change_state=False)
 
 
 def get_model_queryset(model, request=None):
     """Decision function used in frontend - says which model should be used.
     Public models are used only if CMS_MODERATOR.
     """
-    if not settings.CMS_MODERATOR or \
-        (request and (('preview' in request.GET and 
-            'draft' in request.GET) or ('edit' in request.GET or request.session.get('cms_edit', False))) and request.user.is_staff):
+    if not settings.CMS_MODERATOR:
+        # We do not use moderator
         return model.objects.drafts()
+    # We do use moderator
+    if request:
+        preview_draft = ('preview' in request.GET and 'draft' in request.GET)
+        edit_mode = ('edit' in request.GET or request.session.get('cms_edit', False))
+        if preview_draft or edit_mode:    
+            return model.objects.drafts()
+    # Default case / moderator is used but there is no request
     return model.objects.public()
 
 # queryset helpers for basic models

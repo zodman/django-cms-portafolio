@@ -11,17 +11,16 @@
 	<link rel="stylesheet" type="text/css" href="{{MEDIA_URL}}js/carousel/jquery.jcarousel.css" />
 	<link rel="stylesheet" type="text/css" href="{{MEDIA_URL}}js/carousel/skin_casos.css" />
 	<script type="text/javascript" src="{{MEDIA_URL}}js/carousel/jquery.jcarousel.pack.js"></script>
-	<script type="text/javascript" src="{{MEDIA_URL}}js/carousel/jquery.jcarousel.js"></script>
 	<script type="text/javascript">
 	$(document).ready(function(){
 		// simple accordion with special markup
 		$('#navigation').accordion({
-			active: false,
-			header: '.head',
-			navigation: true,
-			event: 'click',
-			fillSpace: false,
-			animated: 'easeslide',
+			'active': false,
+			'header': '.head',
+			'navigation': true,
+			'event': 'click',
+			'fillSpace': false,
+			'animated': 'easeslide'
 		});
 		$('#mycarousel').jcarousel();
 	});
