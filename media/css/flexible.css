@@ -205,4 +205,6 @@ color: #F60;
 
 .formaAlto { margin-bottom:10px;}
 
-
+.plugin_googlemap  .google-map-container{
+	height: 400px;
+}
