@@ -1,13 +1,14 @@
 
 #navigationContainer {
-	width:95%; height:250px;
+	width:95%; 
+	height:100%;
 }
 #navigation {
 	
 	margin:0px;
 	padding:0px;
 	text-indent:0px;
-	height:250px; 
+	height:100%; 
 	width:95%; 
 }
 #navigation a.head {

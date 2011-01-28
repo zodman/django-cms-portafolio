@@ -20,8 +20,8 @@
 			header: '.head',
 			navigation: true,
 			event: 'click',
-			fillSpace: true,
-			animated: 'easeslide'
+			fillSpace: false,
+			animated: 'easeslide',
 		});
 		$('#mycarousel').jcarousel();
 	});
@@ -35,7 +35,6 @@
 {% endblock %}
 
 {% block content %}
-<div id="contentContainer">
 	{% block menu_casos %}
 		{% portafolio_menu_client proyect %}
 	{% endblock %}
@@ -97,5 +96,4 @@
 		</section><!--textosCasosContainer  -->
 	</div><!--rightColCasosContainer  -->
 </div>	
-</div><!--contentContainer  -->
 {% endblock %}

@@ -4,12 +4,18 @@
 			<ul id="navigation">
 				{% for c  in portafolio_clients %}			
 					<li>
-						<a class="head" href="#">{{c.name}}</a>
+					{% with c.proyects.count as count %}
+					<a class="{%if c > 0 %}head{%else%}headSinSubMenu{%endif%}" href="javascript:void(0);">{{c.name}}</a>
+					{%if c > 0 %}
 						<ul>
 							{% for p in c.proyects.all %}
 							<li><a class="{% if p == actual%}current{% endif %}" href="{% url portafolio-proyect p.slug %}">{{p.name}}</a></li>
+							{% empty%}
+							<li></li>
 							{% endfor%}
 						</ul> 
+						{% endif %}
+					{% endwith %}
 					</li>
 				{% endfor %}
 			</ul>
