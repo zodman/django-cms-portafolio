@@ -1,4 +1,5 @@
 from django.db import models
+from django_countries import CountryField
 from cms.models import CMSPlugin
 from django.core.exceptions import ValidationError
 
