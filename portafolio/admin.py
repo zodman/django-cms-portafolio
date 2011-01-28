@@ -15,6 +15,8 @@ class ProyectAdmin(admin.ModelAdmin):
     formfield_overrides = {
         models.TextField : {'widget': WYMEditor},
     }
+    list_display = ("name", "sequence",)
+    list_editable = ( "sequence", )
     class Media:
         js = ("js/jquery-1.4.3.min.js",)
 

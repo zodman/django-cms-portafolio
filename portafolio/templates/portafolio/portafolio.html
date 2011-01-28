@@ -1,5 +1,5 @@
 {% load thumbnail %}
-{% for p in instance.portafolio.all %}
+{% for p in instance.portafolio.all|dictsort:"sequence" %}
 <article id="{{p.id}}m">
 			<div class="modulo">
 		        <div class="moduloContent">

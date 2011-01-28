@@ -31,6 +31,7 @@ class Proyect(models.Model):
     slug = models.SlugField()
     twitter = models.CharField(max_length=20, help_text="twitt via ..", blank = True, null = True)
     facebook_like = models.URLField( blank =True, null = True)
+    sequence = models.IntegerField()
 
     @models.permalink
     def get_absolute_url(self):
