@@ -48,8 +48,7 @@ color: #09C;
 
 
 /* boton  SELECCIONADO */
-
-nav li.selected a
+nav li.selected a, li.selected a
 {
 color:#0099CC !important; 
 font-weight:bold;
