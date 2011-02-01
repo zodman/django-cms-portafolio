@@ -5,7 +5,7 @@ import settings
 
 urlpatterns = patterns('',
      (r'^admin/', include(admin.site.urls)),
-     (r'^fb/', 'vacancy.views.facebook')
+     (r'^fb/$', 'vacancy.views.facebook')
 )
 
 
