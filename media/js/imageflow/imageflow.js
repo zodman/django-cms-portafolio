@@ -122,7 +122,9 @@ function ImageFlow ()
 				/* Set height of the ImageFlow container and center the loading bar */
 				var width = this.ImageFlowDiv.offsetWidth;
 				var height = Math.round(width / my.aspectRatio);
-				document.getElementById(my.ImageFlowID+'_loading_txt').style.paddingTop = ((height * 0.5) -22) + 'px';
+				var data = ((height * 0.5) -22) + 'px';
+				debugger;
+				document.getElementById(my.ImageFlowID+'_loading_txt').style.paddingTop = data;
 				ImageFlowDiv.style.height = height + 'px';
 
 				/* Init loading progress */
@@ -1117,6 +1119,7 @@ function ImageFlow ()
 				{
 					newX = my.imagesDivWidth;
 				}
+
 
 
 				my.Touch.x = newX;
