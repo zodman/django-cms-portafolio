@@ -123,7 +123,6 @@ function ImageFlow ()
 				var width = this.ImageFlowDiv.offsetWidth;
 				var height = Math.round(width / my.aspectRatio);
 				var data = ((height * 0.5) -22) + 'px';
-				debugger;
 				document.getElementById(my.ImageFlowID+'_loading_txt').style.paddingTop = data;
 				ImageFlowDiv.style.height = height + 'px';
 
