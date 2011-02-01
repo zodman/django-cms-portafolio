@@ -49,7 +49,7 @@
 						</div>
 						<div class="jcarousel-clip jcarousel-clip-horizontal">
 							<ul id="mycarousel" class="jcarousel-list jcarousel-list-horizontal" style="width: 1835px; left: 0px;">
-								{% for i in proyect.images.all %}
+								{% for i in proyect.images.all|dictsort:'sequence' %}
 								<li class="jcarousel-item jcarousel-item-horizontal jcarousel-item-5 jcarousel-item-5-horizontal" jcarouselindex="{{forloop.counter}}">
 								<a href="#">
 								{% thumbnail i.image "360x194" crop="center" as img %}
