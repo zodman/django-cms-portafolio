@@ -50,6 +50,7 @@ class Proyect(models.Model):
 class Image(models.Model):
     image = models.ImageField(upload_to= "uploaded_images")
     main = models.BooleanField(default =False)
+    sequence = models.IntegerField()
     proyect = models.ForeignKey(Proyect, related_name="images")
 
 class PortafolioPlugin(CMSPlugin):

@@ -3,7 +3,9 @@
 <article id="{{p.id}}m">
 			<div class="modulo">
 		        <div class="moduloContent">
-					<a href=""><div class="button" id="id-{{p.slug}}"></div></a>
+					<a href="">
+							<div class="button" id="id-{{p.slug}}"></div>
+					</a>
 					  <!--button bubble --> 
 					  <div class="moduloFoto"> 
 					  {% for image in p.images.all %}
@@ -19,12 +21,13 @@
 						  <h2>{{p.service.name}}</h2>
 						  <h1><a href="{% url portafolio-proyect p.slug %}">{{p.name}}</a></h1>
 						  <h3>{{p.country.name}}</h3>
-
+						  {% spaceless%}
 						<p class="liga">
-						<a href="{% url portafolio-proyect p.slug %}">
-								{{ p.description_short|safe }}
+							<a href="{% url portafolio-proyect p.slug %}">
+								<div> {{ p.description_short|safe }}</div>
 							</a>
 						</p>
+						{% endspaceless%}
 					  </div>
 		      <!--moduloTexto -->
 			    </div>
