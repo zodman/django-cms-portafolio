@@ -25,7 +25,11 @@ body{
 
 h1 { font-size:1.4em; color:#000}
 h2 { font-size:1em; color:#09C; font-weight:bold}
-p {  font-size:1em; color:#333}
+p {  
+		font-size:1em; 
+
+
+}
 
 .hr { width:95% height:2px; border-bottom:dotted #333 1px;}
 

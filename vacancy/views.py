@@ -42,4 +42,6 @@ def send_cv(request):
     return _process_cv(request,opening)
 
 def facebook(request):
-    return direct_to_template(request, "vacancy/facebook.html")
+    ops = EnableOpening.objects.all()
+    d = {"enable_openings": ops}
+    return direct_to_template(request, "vacancy/facebook.html", extra_context = d)
