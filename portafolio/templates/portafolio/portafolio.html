@@ -26,7 +26,8 @@
 						  {% spaceless%}
 						<p class="liga">
 							<a href="{% url portafolio-proyect p.slug %}">
-							         {{ p.description_short|striptags }}
+
+							         {{ p.description_short|striptags|linebreaksbr }}
 							</a>
 						</p>
 						{% endspaceless%}
