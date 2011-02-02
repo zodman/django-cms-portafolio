@@ -27,7 +27,7 @@
 						<p class="liga">
 							<a href="{% url portafolio-proyect p.slug %}">
 
-							         {{ p.description_short|striptags|linebreaksbr }}
+							         {{p.description_short|striptags|linebreaksbr|truncatewords:"29" }}
 							</a>
 						</p>
 						{% endspaceless%}
