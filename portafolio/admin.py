@@ -6,9 +6,11 @@ from django.contrib import admin
 from models import Service, Client, Proyect, Image, Country
 
 from cms.plugins.text.widgets.wymeditor_widget import WYMEditor
+from sorl.thumbnail.admin import AdminInlineImageMixin
 
-class ImageInline(admin.TabularInline):
+class ImageInline(AdminInlineImageMixin,admin.TabularInline):
     model =Image
+
 
 class ProyectAdmin(admin.ModelAdmin):
     inlines = [ImageInline]
