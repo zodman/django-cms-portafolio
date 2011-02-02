@@ -52,6 +52,8 @@ class Image(models.Model):
     main = models.BooleanField(default =False)
     sequence = models.IntegerField()
     proyect = models.ForeignKey(Proyect, related_name="images")
+    class Meta:
+        ordering = ("sequence",)
 
 class PortafolioPlugin(CMSPlugin):
     portafolio = models.ManyToManyField(Proyect)

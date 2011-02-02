@@ -28,8 +28,6 @@
 <script type="text/javascript" src="{{MEDIA_URL}}js/event_listeners.js"></script>
 <script type="text/javascript" src="{{MEDIA_URL}}js/resolution.js"></script> 
 <link rel="SHORTCUT ICON" href="{{MEDIA_URL}}img/favicon.ico"/>
-
-
 	{% plugins_media %}
 	{% block extrahead%}
 	{% endblock %}
@@ -37,74 +35,76 @@
 <body>
 
 <!--<center> -->
-<div  id=INICIO>
+<div>
 
-<!--header -->
-<header id="headerContainer">
-  <div class="leftCol">
-      <div id="logoInteralia"><a href="/"  title="Interalia :: Soluciones interactivas"></a></div>
-      <!--logoInteralia -->
-      <div id="navContainer">
-        <div id="mainav">
-			<nav>
-				{% spaceless %}
-				<ul> 
-					 {% show_menu 0 0 100 100 %}
-				</ul>
-				{% endspaceless %}
-          </nav>
+    <!--header -->
+    <header id="headerContainer">
+      <div class="leftCol">
+          <div id="logoInteralia">
+                <a href="/"  title="Interalia :: Soluciones interactivas"></a>
+          </div>
+          <!--logoInteralia -->
+          <div id="navContainer">
+            <div id="mainav">
+                <nav>
+                    {% spaceless %}
+                    <ul> 
+                         {% show_menu 0 0 100 100 %}
+                    </ul>
+                    {% endspaceless %}
+                </nav>
 
-        </div>
-        <!--mainav -->
+            </div>
+            <!--mainav -->
+          </div>
+          <!--navContainer -->
       </div>
-      <!--navContainer -->
-  </div>
-  <!--leftCol -->
-{%block right-header %}
-  <div class="rightColHeader">
-    <div  class="rightContent">
-    
-      <div id="menuExtras">
-	  <script src="http://connect.facebook.net/es_LA/all.js#xfbml=1"></script><fb:like href="facebook.com/interalia.net" show_faces="false" id="megusta" width="120" layout="button_count"></fb:like> 
-      </div>
-      <!--menuExtras -->
-    </div>
-    <!--rightContent -->
-  </div>
-  <!--ightCol -->
-{% endblock %}
-</header>
-<!--headerContainer -->
+      <!--leftCol -->
+        {%block right-header %}
+          <div class="rightColHeader">
+            <div  class="rightContent">
+              <div id="menuExtras">
+              <script src="http://connect.facebook.net/es_LA/all.js#xfbml=1"></script><fb:like href="facebook.com/interalia.net" show_faces="false" id="megusta" width="120" layout="button_count"></fb:like> 
+              </div>
+              <!--menuExtras -->
+            </div>
+            <!--rightContent -->
+          </div>
+          <!--ightCol -->
+        {% endblock %}
+    </header>
+    <!--headerContainer -->
 
 
-<!--contenido -->
+    <!--contenido -->
 
-{% block intro-content %}
-{% endblock %}
+    {% block intro-content %}
+    {% endblock %}
 
-<div id="contentContainer">
-	{% block content %}
-  {% endblock content %}
-</div> <!--contentContainer -->
-
-
-<!--footer -->
-<footer id="footerContainer">
-<div class="rowFooterTop">
-	<div class="leftColFooter">
-<script src="http://connect.facebook.net/es_LA/all.js#xfbml=1"></script><fb:like href="facebook.com/interalia.net" show_faces="false" id="megusta" width="550"></fb:like>
- </div><!--leftColFooter -->
-  <div class="rightColFooter"><a href="#">Versión Mobile</a></div><!--rightColFooter -->
-</div><!--rowFooterTop -->
-<div class="rowFooterBottom">
-  <div class="leftColFooter">+52 (55) 5553-2010</div><!--leftColFooter -->
-  <div class="rightColFooter">1997-2011 Derechos Reservados</div><!--rightColFooter -->
-</div><!--rowFooterTop -->
+    <div id="contentContainer">
+      {% block content %}
+      {% endblock content %}
+    </div> <!--contentContainer -->
 
 
-  </footer>
-<!--footerContainer -->
-<!--contentContainer -->
+    <!--footer -->
+    <footer id="footerContainer">
+        <div class="rowFooterTop">
+            <div class="leftColFooter">
+                <script src="http://connect.facebook.net/es_LA/all.js#xfbml=1"></script><fb:like href="facebook.com/interalia.net" show_faces="false" id="megusta" width="550"></fb:like>
+            </div><!--leftColFooter -->
+            <div class="rightColFooter"><a href="#">Versión Mobile</a></div><!--rightColFooter -->
+
+        </div><!--rowFooterTop -->
+        <div class="rowFooterBottom">
+          <div class="leftColFooter">+52 (55) 5553-2010</div><!--leftColFooter -->
+          <div class="rightColFooter">1997-2011 Derechos Reservados</div><!--rightColFooter -->
+        </div><!--rowFooterTop -->
+
+
+      </footer>
+    <!--footerContainer -->
+    <!--contentContainer -->
 </div>
 
 </body>

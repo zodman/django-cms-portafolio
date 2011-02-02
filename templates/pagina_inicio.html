@@ -40,27 +40,27 @@ $(document).ready(function(){
 {% endblock %}
 {% block content %}
 <div class="leftCol">
-<section id="flash">
-	<div id="flashContainer">
-		{% block area_superior %}
-			{% with "640" as width %}
-				{% placeholder area_superior %}
-			{% endwith %}
-		{% endblock %}
-	</div>
-    <!--flashcontainer  -->
-</section>
-<section id="moduloCasos"> 
-	<div id="moduloContainer">
-		{% block abajo_izquierda%}
-		{% with "220" as with %}
-				{% placeholder abajo_izquierda %}
-			{% endwith %}
-		{% endblock %}
-      <!-- fin modulo8 -->
-    </div>
-    <!--moduloContainer -->
-  </section> 
+    <section id="flash">
+        <div id="flashContainer">
+            {% block area_superior %}
+                {% with "640" as width %}
+                    {% placeholder area_superior %}
+                {% endwith %}
+            {% endblock %}
+        </div>
+        <!--flashcontainer  -->
+    </section>
+    <section id="moduloCasos"> 
+        <div id="moduloContainer">
+            {% block abajo_izquierda%}
+            {% with "220" as with %}
+                    {% placeholder abajo_izquierda %}
+                {% endwith %}
+            {% endblock %}
+          <!-- fin modulo8 -->
+        </div>
+        <!--moduloContainer -->
+      </section> 
 </div>
   <!--leftCol -->
 <aside id="columnaPracticas">
@@ -75,5 +75,5 @@ $(document).ready(function(){
     <!--rightContent -->
   </div>
   <!--rightColContent -->
-  </aside>
+</aside>
 {% endblock %}
