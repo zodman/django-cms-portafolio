@@ -9,7 +9,7 @@
 #moduloContainer{ float:none; width:100%; height:auto; min-height:250px; margin:20px 0px 0px 0px; overflow:hidden
 }
 
-.modulo{ float:left; width:244px;height:250px; margin:0px 0px 33px 0px; border-right:#999 dotted 1px; background-color: #FFF; display:block
+.modulo{ float:left; width:244px;height:292px; margin:0px 0px 33px 0px; border-right:#999 dotted 1px; background-color: #FFF; display:block
 }
 
 .moduloContent{ float:none; width:180px; height:auto; min-height:150px; margin-left: auto ; margin-right: auto; 
