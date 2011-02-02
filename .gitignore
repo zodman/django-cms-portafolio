@@ -34,5 +34,6 @@ tags
 *.db
 local_settings.py
 media/cache/
+media/photos/
 media/cms_page_media/*
 media/uploaded_images/
