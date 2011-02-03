@@ -4,6 +4,7 @@ from django.shortcuts import get_object_or_404
 from django.contrib import messages
 from models import EnableOpening, Opening, Candidate
 from forms import ApplyForm
+import datetime
 
 def index(request):
     eopen = EnableOpening.objects.all()
@@ -43,5 +44,6 @@ def send_cv(request):
 
 def facebook(request):
     ops = EnableOpening.objects.all()
-    d = {"enable_openings": ops}
+    today = datetime.datetime.now() 
+    d = {"enable_openings": ops, "today": today}
     return direct_to_template(request, "vacancy/facebook.html", extra_context = d)
