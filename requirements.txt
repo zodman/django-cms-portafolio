@@ -2,11 +2,10 @@ django
 PIL
 MySQL-python
 south
--e git+https://github.com/zodman/cmsplugin_facebook.git#egg=cmsplugin_facebook
--e hg+https://bitbucket.org/smileychris/django-countries#egg=django-countries
+-e hg+hg://bitbucket.org/smileychris/django-countries#egg=django-countries
 -e git+git://github.com/ojii/django-classy-tags.git#egg=django-classy-tags
 sorl-thumbnail==11.01
 django-uni-form
 django-devserver
 django-autofixture
--e git+git://github.com/maccesch/cmsplugin-contact.git#egg=cmsplugin-contact
+django-cms

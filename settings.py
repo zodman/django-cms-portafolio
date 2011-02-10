@@ -155,6 +155,11 @@ GOOGLE_MAPS_API_KEY = "ABQIAAAA__ShXMvquJtWn_N18hRhhBRdlxeguhVb5aDTQiWeXVdMbc2yz
 TWITTER_ACCOUNT = 'dw_interalia'
 TWITTER_MESSAGE = "ajuaaa"
 
+EMAIL_HOST = "localhost"
+FROM_EMAIL = "rh@interalia.net"
+TO_EMAIL = ["andres.vargas@interalia.net",]
+
+
 try:
     from local_settings import *
 except ImportError: #FIX para el syncdb
