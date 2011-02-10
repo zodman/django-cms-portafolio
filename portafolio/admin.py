@@ -3,9 +3,12 @@ from django.db import models
 from django.contrib import admin
 
 from models import Service, Client, Proyect, Image, Country
+
 from cms.plugins.text.widgets.wymeditor_widget import WYMEditor
 from sorl.thumbnail.admin import AdminInlineImageMixin, AdminImageWidget
 from django.conf.urls.defaults import patterns
+from cms.plugins.text.widgets.wymeditor_widget import WYMEditor
+
 
     
 class ImageInline(AdminInlineImageMixin,admin.TabularInline):
@@ -19,7 +22,7 @@ class ImageInline(AdminInlineImageMixin,admin.TabularInline):
 class ProyectAdmin(admin.ModelAdmin):
     inlines = [ImageInline]
     formfield_overrides = {
-     #   models.TextField : {'widget': WYMEditor},
+        models.TextField : {'widget': WYMEditor},
     }
     list_display = ("name", "sequence",)
     list_editable = ( "sequence", )
@@ -28,7 +31,6 @@ class ProyectAdmin(admin.ModelAdmin):
         "js/jquery-1.4.3.min.js",
         "https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js",
         "js/order.js")
-
 
 admin.site.register(Service)
 admin.site.register(Client)
